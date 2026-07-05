@@ -2,6 +2,10 @@
 
 A hybrid RAG (Retrieval-Augmented Generation) system built for faculty profiles and research projects at MBZUAI. The system uses **LangGraph** orchestration with explicit gates for domain filtering, relevance scoring, ambiguity detection based on confidence, and configurable abstention by Threshold.
 
+Please note that I am only using 
+Faculty data of Machine Learning department: https://mbzuai.ac.ae/research-department/machine-learning-department/
+Research Projects: https://research.mbzuai.ac.ae/research-projects
+
 ---
 
 ## 📋 Step-by-Step Setup & Execution Guide
