@@ -34,7 +34,7 @@ streamlit run app.py
 
 ###  Step 5: Testing
 Once the UI is open, you can test the agent's behavior. The system is designed to Answer, Ask Clarifying Questions, or Abstain depending on the query.
- For every query, click on the "📊 Analytics & Retrieval" tab inside the app. You will see the exact text chunks retrieved, the LLM's confidence score, and its step-by-step reasoning!
+ For every query, click on the "📊 Analytics & Retrieval" tab inside the app. You will see the exact text chunks retrieved, the LLM's confidence score, and other information
 
 ✅ Test 1: Answerable Questions (High Confidence)
 
