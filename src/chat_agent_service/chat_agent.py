@@ -159,6 +159,7 @@ def evaluate_confidence(state: AgentState):
             "Instructions:\n"
             "- Generate exactly 3 questions.\n"
             "- The questions should be refinements, specific aspects, or related topics of the original question that the context actually covers.\n"
+            "- The questions be independent of each other to the point where they can be answered using the context.\n"
             "- Provide the output strictly as a JSON list of strings.\n\n"
             "Examples:\n"
             "Original Question: \"Tell me about Le Song's publications on quantum computing.\"\n"
