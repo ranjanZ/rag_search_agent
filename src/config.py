@@ -22,6 +22,6 @@ FINAL_TOP_K = 5
 RRF_K = 60 
 
 # --- DeepInfra LLM Settings ---
-DEEPINFRA_API_KEY = os.environ.get("DEEPINFRA_API_KEY", "IfQawFoRjh3GjXUFDWnshQvhTtuGZ73F")
+DEEPINFRA_API_KEY = os.environ.get("DEEPINFRA_API_KEY", "place your key")
 DEEPINFRA_BASE_URL = "https://api.deepinfra.com/v1/openai"
 LLM_MODEL = "meta-llama/Llama-3.3-70B-Instruct"
