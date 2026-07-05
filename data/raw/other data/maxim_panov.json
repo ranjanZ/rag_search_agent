@@ -1,0 +1,13 @@
+{
+    "name": "Maxim Panov",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "maxim.panov@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/maxim-panov/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Panov worked as a research scientist at DATADVANCE Company, where he participated in developing the library of data analysis methods for engineering applications. This library, pSeven, is now used by many companies worldwide, including Airbus, Porsche, Mitsubishi, Toyota, and Limagrain. From 2018, Panov has been an assistant professor at Skolkovo Institute of Science and Technology, Moscow, where he led a statistical machine learning group. Since 2022, he has led an AI theory and algorithms group at the Technology Innovation Institute, Abu Dhabi, UAE.\r\n\r\nProfessor Panov has been awarded funding from various governmental and private sources. He received the Moscow Government Award for Young Scientists 2018 and the Skoltech Faculty Excellence Award 2022. He also won the Best Paper Runner-up Award at the Uncertainty in Artificial Intelligence 2023 conference. Professor Panov is an associate editor at the Journal of Statistical Planning and Inference.",
+        "education": "Ph.D. in Mathematical Statistics, Institute for Information Transmission Problems of Russian Academy of Sciences, Russia B.Sc. and M.Sc. in Applied Mathematics, Moscow Institute of Physics and Technology, Russia",
+        "accolades": "Best Paper Runner-up Award at UAI 2023 Skoltech Faculty Excellence Award 2022 Moscow Government Award for Young Scientists 2018.",
+        "publications": "",
+        "research": "Makni, V. Plassier, A. Rubashevskii, E. Moulines, M. Panov. Conformal Prediction for Federated Uncertainty Quantification Under Label Shift, ICML 2023 Vazhentsev, A. Tsvigun, G. Kuzmin, A. Panchenko, M. Panov, M. Burtsev and A. Shelmanov. Hybrid Uncertainty Estimation for Selective Text Classification in Ambiguous Tasks, Annual Meeting of Association of Computational Linguistics, ACL, 2023 Seddik, M. Tiomoko, A. Decurninge, M. Panov, M. Guillaud. Learning from Low Rank Tensor Data: A Random Tensor Theory Perspective, UAI 2023 Klopp, O., Panov, M., Sigalla, S. and Tsybakov, A. Assigning Topics to Documents by Successive Projections, Annals of Statistics, 2023 Kotelevskii, A. Artemenkov, K. Fedyanin, F. Noskov, A. Fishkov, A. Shelmanov, A. Vazhentsev, A. Petiushko, M. Panov. Nonparametric Uncertainty Quantification for Single Deterministic Neural Network, NeurIPS 2022 Velikanov, R. Kail, I. Anokhin, R. Vashurin, M. Panov, A. Zaytsev and D. Yarotsky. Embedded Ensembles: infinite width limit and operating regimes, AISTATS 2022"
+    }
+}

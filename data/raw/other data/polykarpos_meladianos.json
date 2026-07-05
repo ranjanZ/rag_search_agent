@@ -1,0 +1,13 @@
+{
+    "name": "Polykarpos Meladianos",
+    "title": "Assistant Teaching Professor of Machine Learning and Research Scientist",
+    "email": "Polykarpos.M@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/polykarpos-meladianos/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Meladianos led the development of real-world AI systems, including LLM-based chatbots, retrieval-augmented generation pipelines, and fraud detection tools. His current work focuses on agentic architectures, scalable knowledge infrastructures, and real-time AI assistants.\r\n\r\nProfessor Meladianos is an AI/NLP Engineer with deep industry experience in applied machine learning and natural language processing, having led chatbot and RAG system development using internal LLMs; implemented feedback learning and fine-tuning; and built a multimodal knowledge graph powering RAG. He developed real-time bonus calculation systems and fraud detection using Spark streaming for large-scale ML, created deep learning entity extraction systems for real-time maritime/shipping insights and worked on large-scale text mining, meeting summarization, and deep learning for summarization.",
+        "education": "Ph.D. in Computer Science, Athens University of Economics and Business, Greece Data Science Master-M2, École Polytechnique, France B.Sc. + M1 in Electrical and Computer Engineering, The Aristotle University of Thessaloniki, Greece",
+        "accolades": "",
+        "publications": "",
+        "research": "Graph classification with 2D CNNs, ICANN 2019 Kernel Graph Convolutional Neural Networks, ICANN 2018 An optimization approach for sub-event detection and summarization in Twitter, ECIR 2018 Unsupervised abstractive meeting summarization, ACL 2018 A Degeneracy Framework for Graph Similarity, IJCAI 2018 Word embeddings from large-scale Greek web content, arXiv 2018 K-clique-graphs for dense subgraph discovery, ECML/PKDD 2017 Matching node embeddings for graph similarity, AAAI 2017 Real-time keyword extraction from conversations, EACL 2017 Classifying graphs as images with CNNs, arXiv 2017 Combining graph degeneracy and submodularity for extractive summarization, 2017"
+    }
+}

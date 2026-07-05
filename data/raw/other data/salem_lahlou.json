@@ -1,0 +1,13 @@
+{
+    "name": "Salem Lahlou",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "salem.lahlou@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/salem-lahlou/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Lahlou was a senior researcher at the Technology Innovation Institute in Abu Dhabi, scientist in residence at NextAI in Montreal and intern at Google and IBM. He obtained a Ph.D. in uncertainty modeling from Université de Montreal, a master’s degree in mathematics, vision and learning from Ecole Normale Supérieure and graduated with very high honors from his master’s degrees in applied mathematics at Ecole Polytechnique. Before his Ph.D., he worked as a data scientist at Booking.com in Amsterdam.",
+        "education": "M.Sc. in Applied Mathematics, É cole Polytechnique, France M.Sc. in Mathematics, Vision, and Learning, É cole Normale Supérieure, France Ph.D. in Uncertainty Modeling, Université de Montréal, Canada, 2024",
+        "accolades": "",
+        "publications": "",
+        "research": "Salem Lahlou, Tristan Deleu, Pablo Lemos, Dinghuai Zhang, Alexandra Volokhova, Alex Hernández-García, Lena Nehale Ezzine, Yoshua Bengio, Nikolay Malkin: “A Theory of Continuous Generative Flow Networks”. ICML 2023. Nikolay Malkin, Salem Lahlou, Tristan Deleu, Xu Ji, Edward Hu, Katie Everett, Dinghuai Zhang, Yoshua Bengio: “GFlowNets and variational inference”. ICLR 2023. Yoshua Bengio, Salem Lahlou, Tristan Deleu, Edward J. Hu, Mo Tiwari, Emmanuel Bengio: “GFlowNet Foundations”. JMLR 2023. Salem Lahlou, Moksh Jain, Hadi Nekoei, Victor I Butoi, Paul Bertin, Jarrid Rector-Brooks, Maksym Korablyov, Yoshua Bengio: “DEUP : Direct Epistemic Uncertainty Estimation”. TMLR 2023. Maxime Chevalier-Boisvert, Dzmitry Bahdanau, Salem Lahlou, Lucas Willems, Chitwan Saharia, Thien Huu Nguyen, Yoshua Bengio: “BabyAI : A Platform to Study the Sample Efficiency of Grounded Language Learning”. ICLR 2019. Salem Lahlou, Laura Wynter: “A Nash equilibrium formulation of a tradable credits scheme for incentivizing transport choices: From next-generation public transport mode choice to HOT lanes”. Transportation Research Part B 2017."
+    }
+}

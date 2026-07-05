@@ -1,0 +1,13 @@
+{
+    "name": "Martin Takáč",
+    "title": "Associate Dean for Academic Affairs and Associate Professor of Machine Learning",
+    "email": "martin.takac@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/martin-takac/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Takáč was an associate professor in the Department of Industrial and Systems Engineering at Lehigh University in Pennsylvania, USA. He received several awards during this period, including the Best Ph.D. Dissertation Award by the OR Society (2014), Leslie Fox Prize (2nd Prize; 2013) by the Institute for Mathematics and its Applications, and INFORMS Computing Society Best Student Paper Award (runner up; 2012). Professor Takáč received funding from various U.S. National Science Foundation programs, including through a TRIPODS Institute grant awarded to him and his collaborators at Lehigh, Northwestern, and Boston University. He is an area chair at machine learning conferences like ICML, NeurIPS, ICLR, and AISTATS.",
+        "education": "Ph.D. in Mathematics, University of Edinburgh, Scotland M.Sc. in Mathematics, Comenius University, Slovakia B.Sc. in Mathematics, Comenius University, Slovakia",
+        "accolades": "Best Ph.D. Dissertation Award by the OR Society (2014). Leslie Fox Prize (2nd Prize; 2013) by the Institute for Mathematics and its Applications. INFORMS Computing Society Best Student Paper Award (runner up; 2012).",
+        "publications": "Publication Martin Takáč",
+        "research": "Takáč currently serves as an associate editor for Mathematical Programming Computation, Journal of Optimization Theory and Applications, and Optimization Methods and Software. Iteration complexity of randomized block-coordinate descent methods for minimizing a composite function. P Richtárik, M Takáč. Mathematical Programming 144 (1), 1-38, 2014. Parallel coordinate descent methods for big data optimization. P Richtárik, M Takáč. Mathematical Programming, Series A, 1-52, 2015. Reinforcement learning for solving the vehicle routing problem. M Nazari, A Oroojlooy, LV Snyder, M Takáč. Conference on Neural Information Processing Systems, NeurIPS, 2018. SARAH: A novel method for machine learning problems using stochastic recursive gradient. L Nguyen, J Liu, K Scheinberg, M Takáč. In 34th International Conference on Machine Learning, ICML, 2017. Communication-efficient distributed dual coordinate ascent. M Jaggi, V Smith, M Takác, J Terhorst, S Krishnan, T Hofmann, MI Jordan. Advances in neural information processing systems 27, 2014. Distributed coordinate descent method for learning with big data. P Richtárik, M Takác. Journal of Machine Learning Research 17, 1-25, 2016."
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Junpei Komiyama",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "Junpei.Komiyama@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/junpei-komiyama/",
+    "tabs": {
+        "biography": "Alongside his role at MBZUAI, Professor Komiyama is a visiting researcher at the RIKEN Center for Advanced Intelligence Project (AIP). He previously served as Assistant Professor of Technology, Operations, and Statistics at the New York University Stern School of Business, and worked at the University of Tokyo as a Research Associate and received his Ph.D. in Information Science from the University of Tokyo’s Graduate School of Information Science and Technology.",
+        "education": "Postdoctoral Fellow, Institute of Industrial Science, The University of Tokyo, Japan Ph.D. , The University of Tokyo, Japan Master of Engineering (M.Eng) in Applied Physics, The University of Tokyo, Japan",
+        "accolades": "Visiting researcher in RIKEN AIP since 2024. Action editor for Transactions on Machine Learning Research since 2024. Japanese translator of the well-known book Probabilistic Machine Learning: An Introduction, an introductory textbook on machine learning by Kevin P. Murphy. Research has appeared in top-tier venues including NeurIPS, ICML, AISTATS, KDD, Mathematics of Operations Research, and Management Science. He has served as an area chair for NeurIPS (2024–), AISTATS (2023–), ICML (2026–).",
+        "publications": "",
+        "research": "Junpei Komiyama, Taira Tsuchiya, and Junya Honda. “Minimax Optimal Algorithms for Fixed-Budget Best Arm Identification.” NeurIPS 2022. * Monte Carlo Tree Search Abe Kenshi, Junpei Komiyama, and Atsushi Iwasaki. “Anytime Capacity Expansion in Medical Residency Match by Monte Carlo Tree Search.” IJCAI 2022. * Mechanism design and market mechanisms Junpei Komiyama and Shunya Noda. “On Statistical Discrimination as a Failure of Social Learning: A Multiarmed Bandit Approach.” Management Science. * Reward learning, especially how machine learning systems can explore optimal decision-making."
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Zangir Iklassov",
+    "title": "Assistant Teaching Professor of Machine Learning",
+    "email": "Zangir.Iklassov@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/zangir-iklassov/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Iklassov’s career blended academic research, teaching, and industry innovation. Before his current faculty role, he served as a postdoctoral researcher at MBZUAI, contributing to high-impact projects in optimization and large language model reasoning. He also led research efforts for ADNOC’s EnergyAI project, developing domain-specific AI solutions. His industry experience includes co-founding Smart System Technologies LTD, a startup specializing in road damage detection, as well as engineering roles at ReLive Intelligence LTD and Computer Vision Technologies LTD, where he built AI algorithms for large-scale computer vision applications. In academia, Professor Iklassov has contributed through teaching assistantships in Advanced Machine Learning and Deep Learning, mentorship of students, and invited talks, including a research seminar at Oxford University.",
+        "education": "Postdoctoral Fellow, Mohamed bin Zayed University of Artificial Intelligence (MBZUAI), UAE Visiting Researcher, King’s College London, England Ph.D. in Machine Learning, Mohamed bin Zayed University of Artificial Intelligence (MBZUAI), UAE M.A. in Mathematics, Nazarbayev University, Kazakhstan B.A. in Mathematics, Nazarbayev University, Kazakhstan",
+        "accolades": "Publications in top AI conferences: NeurIPS, ACL, IJCAI, ACML, IEEE Invited speaker, Oxford University Mathematical Institute Research Seminar (2024) Research visit at King’s College London, working on NLP for combinatorial problems Co-founder and successful exit of Smart System Technologies LTD Lead AI researcher for ADNOC’s EnergyAI LLM-powered industrial framework",
+        "publications": "",
+        "research": "SVRPBench: A Realistic Benchmark for Stochastic Vehicle Routing Problem, NeurIPS 2025 (submitted) LLM-BabyBench: Understanding and Evaluating Grounded Planning and Reasoning in LLMs, NeurIPS 2025 (submitted) Hypothesis-Powered End-to-End Agents of Data Science, ICML 2025 (submitted) Library-Like Behavior in Language Models is Enhanced by Self-Referencing Causal Cycles, ACL 2025 Self-Guiding Exploration for Combinatorial Problems, NeurIPS 2024 Reinforcement Learning for Solving Stochastic Vehicle Routing Problem, ACML 2023 Reinforcement Learning Approach to Stochastic Vehicle Routing Problem With Correlated Demands, IEEE Access 2023 On the Study of Curriculum Learning for Inferring Dispatching Policies on the Job Shop Scheduling, IJCAI 2023"
+    }
+}

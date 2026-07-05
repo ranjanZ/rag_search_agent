@@ -1,0 +1,13 @@
+{
+    "name": "Roman Bresson",
+    "title": "Assistant Teaching Professor of Machine Learning and Research Scientist",
+    "email": "Roman.Bresson@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/roman-bresson/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Bresson was a Software Engineer at Ensimag (France), specializing in applied mathematics, optimization, simulation and statistics. Professor Bresson developed novel neural architectures that ensure trustable models for safety-critical context, and worked at Thales as a research engineer – specializing on safe and trustable machine learning systems for safety-critical contexts. Professor Bresson was a postdoctoral researcher at KTH (Sweden), honing his research skills and transitioning to graph and generative machine learning.",
+        "education": "Postdoctoral Researcher, KTH Royal Institute of Technology, Sweden Research Engineer, Thales Research and Technology, France Ph.D. in Machine Learning, Université Paris-Saclay and Thales, France Software and Applied Mathematics Engineer from The École nationale supérieure d'informatique et de mathématiques appliquées ( Ensimag), France M.Sc. in Applied and Industrial Mathematics from Ensimag, France Classes Préparatoires aux Grandes Ecoles in Mathematics-Physics from Lycée Joffre, Montpellier, France",
+        "accolades": "Thales Ph.D. Award 2023. Patents: \"Method for generating a decision support system and associated systems, FR2005894, 2020\", \"Method and system for supervising a tracking system, FR1915153, 2021\", \"Method for evaluating the compliance of a tracking system using a restricted number of measurements and associated devices, WO2025008535A1, 2024\".",
+        "publications": "",
+        "research": "OMIDIENT: Multiomics Integration for Cancer by Dirichlet Auto-Encoder Networks N Safinianaini, N Välimäki, R Bresson, A Gorbonos, K Rajamäki, L A Aaltonen, P Marttinen bioRxiv, 2025.07. 02.662608, 2025 Obtaining Example-Based Explanations from Deep Neural Networks G Dong, H Boström, M Vazirgiannis, R Bresson IDA 2025 Prediction Via Shapley Value Regression A Alkhatib, R Bresson, H Boström, M Vazirgiannis The International Conference on Machine Learning (ICML2025) KAGNNs: Kolmogorov-Arnold Networks meet Graph Learning R Bresson, G Nikolentzos, G Panagopoulos, M Chatzianastasis, J Pang, M Vazirgiannis TMLR (2025) Cutting the Black Box: Conceptual Interpretation of a Deep Neural Net with Multi-Modal Embeddings and Multi-Criteria Decision Aid N Atienza, R Bresson, C Rousselot, P Caillou, J Cohen, C Labreuche, M Sebag IJCAI24"
+    }
+}

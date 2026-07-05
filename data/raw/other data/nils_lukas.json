@@ -1,0 +1,13 @@
+{
+    "name": "Nils Lukas",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "nils.lukas@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/nils-lukas/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Lukas received his Ph.D. from the University of Waterloo in Canada, where he was generously supported by the David R. Cheriton Scholarship for outstanding academic achievements. His Ph.D. dissertation was awarded the Mathematics Doctoral Prize’s Top Honor, and in 2024 he was a finalist for the Governor’s General Gold medal in Canada. During his Ph.D., Lukas joined Microsoft Research and Borealis AI as a research intern to research privacy in large language models. He publishes to top-tier machine learning and security conferences, such as ICLR, USENIX and IEEE S&P, and his work has received a distinguished contribution award at Microsoft MLADS in 2023.",
+        "education": "Ph.D. in Trustworthy Machine Learning, University of Waterloo, Canada M.Sc. on Privacy-enhancing Technologies, RWTH Aachen University, Germany B.Sc. in Computer Science, RWTH Aachen University, Germany",
+        "accolades": "Mathematics Doctoral Prize’s Top Honor, 2024. Governor’s General Gold Medal Finalist in Canada, 2024. Distinguished contribution award at Microsoft MLADS, 2023. Spotlight Award, ICLR 2021.",
+        "publications": "",
+        "research": "Nils Lukas, Abdulrahman Diaa, Lucas Fenaux, Florian Kerschbaum: “Leveraging Optimization for Adaptive Attacks on Image Watermarks”, ICLR 2024, The Twelfth International Conference on Learning Representations. Benjamin Schneider, Nils Lukas, Florian Kerschbaum: “Universal Backdoor Attacks”, ICLR 2024, The Twelfth International Conference on Learning Representations. Nils Lukas, Ahmed Salem, Robert Sim, Shruti Tople, Lukas Wutschitz, Santiago Zanella-Béguelin: “Analyzing Leakage of Personally Identifiable Information in Language Models”, IEEE S&P 2023, The 2023 Symposium on Security and Privacy. Nils Lukas and Florian Kerschbaum: “PTW: Pivotal Tuning Watermarking for Pre-Trained Image Generators”, USENIX 2023, The 33rd USENIX Security Symposium. Nils Lukas, Edward Jiang, Xinda Li, Florian Kerschbaum: “SoK: How Robust is Image Classification Deep Neural Network Watermarking?”, IEEE S&P 2022, The 2022 Symposium on Security and Privacy. Nils Lukas, Yuxuan Zhang, Florian Kerschbaum: “Deep Neural Network Fingerprinting by Conferrable Adversarial Examples”, ICLR 2021, The Ninth International Conference on Learning Representations."
+    }
+}

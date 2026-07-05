@@ -1,0 +1,13 @@
+{
+    "name": "Zhiqiang Xu",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "zhiqiang.xu@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/zhiqiang-xu/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Xu was a senior research scientist with Baidu Research in China. Xu served as a reviewer for several academic activities of NeurIPS, ICML, ICLR, IJCAI, AAAI in various years. He also has industrial experience in automatic optical inspection (AOI) for TFT-LCD panels and solar wafers, data analytics for airlines and insurances.",
+        "education": "Ph.D. in Computer Engineering, Nanyang Technological University, Singapore",
+        "accolades": "",
+        "publications": "Publication Zhiqiang Xu",
+        "research": "Li has authored or co-authored more than 20 research papers with more than 600 citations. Zhiqiang Xu and Ping Li. Faster Noisy Power Method. ALT 2022. Zhiqiang Xu and Ping Li. A Comprehensively Tight Analysis of Gradient Descent for PCA. NeurIPS 2021. Zhiqiang Xu and Ping Li. On the Riemannian Search for Eigenvector Computation. JMLR 2021. Zhiqiang Xu and Ping Li. On the Faster Alternating Least-Squares for CCA. AISTATS 2021. Zhiqiang Xu and Ping Li. Towards Practical Alternating Least-Squares for CCA. NeurIPS 2019. Zhiqiang Xu. Gradient descent meets shift-and-invert preconditioning for eigenvector computation. NeurIPS 2018."
+    }
+}

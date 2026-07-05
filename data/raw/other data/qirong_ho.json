@@ -1,0 +1,13 @@
+{
+    "name": "Qirong Ho",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "qirong.ho@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/qirong-ho/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Ho co-founded and CTO at Petuum Inc., a unicorn AI startup which has been recognized as a World Economic Forum Tech Pioneer for creating standardized building blocks that enable assembly-line production of AI, in a manner that is affordable, sustainable, scalable, and requires less training of AI workers. Professor Ho is a member of the Technical Committee for the Composable, Automatic and Scalable ML (CASL) open-source consortium. His doctoral thesis received the 2015 SIGKDD Dissertation Award (runner-up).",
+        "education": "Ph.D. in Machine Learning, Carnegie Mellon University, USA B.Sc. in Computational Biology, Carnegie Mellon University, USA",
+        "accolades": "Jay Lepreau Best Paper Award, the 15th USENIX Symposium on Operating Systems Design and Implementation, 2021 (OSDI '21) Best Paper Award, Managed Communication and Consistency for Fast Data-Parallel Iterative Analytics, ACM Symposium on Cloud Computing, 2015 (SoCC 2015) 2015 SIGKDD Dissertation Award (runner-up) for his doctoral thesis.",
+        "publications": "Publication Qirong Ho",
+        "research": "Ho has published more than 70 papers with more than 3400 citations. He holds U.S. patents in the areas of distributed deep learning and machine learning, AI operating systems, and elastic management of machine learning computing. Pollux: Co-adaptive cluster scheduling for goodput-optimized deep learning (OSDI, 2021). Poseidon: An efficient communication architecture for distributed deep learning on GPU clusters (USENIX ATC, 2017). Strategies and principles of distributed machine learning on big data (Engineering, Vol 2, Issue 2, 2016). Petuum: A new platform for distributed machine learning on big data (IEEE Transactions on Big Data, Vol 1(2), 2015). More effective distributed ml via a stale synchronous parallel parameter server (NeurIPS, 2013). Analyzing Time-Evolving Networks using an Evolving Cluster Mixed Membership Stochastic Blockmodel ( Handbook of Mixed Membership Models and its Applications , Chapter 22, 2014)."
+    }
+}

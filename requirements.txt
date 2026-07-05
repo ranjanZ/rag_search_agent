@@ -1,0 +1,19 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+playwright
+beautifulsoup4
+numpy
+streamlit
+requests
+pyyaml
+sentence-transformers
+rank_bm25
+transformers
+openai
+faiss-cpu
+
+
+langchain 
+langchain-openai
+langgraph

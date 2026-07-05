@@ -1,0 +1,13 @@
+{
+    "name": "Samuel Horváth",
+    "title": "Assistant Professor of Machine Learning",
+    "email": "samuel.horvath@mbzuai.ac.ae",
+    "url": "https://mbzuai.ac.ae/study/faculty/samuel-horvath/",
+    "tabs": {
+        "biography": "Prior to joining MBZUAI, Professor Horváth completed his M.Sc. (2018) and Ph.D. (2022) in statistics at King Abdullah University of Science and Technology (KAUST) in Kingdom of Saudi Arabia. He has a relatively rich industrial experience obtained via research internships, including Amazon Scalable Machine Learning, Germany (2019), Samsung AI Centre, United Kingdom (2020), and Facebook AI Research, Canada (2021).",
+        "education": "Ph.D. in Statistics, King Abdullah University of Science and Technology (KAUST), Kingdom of Saudi Arabia Master’s in Statistics, King Abdullah University of Science and Technology (KAUST), Kingdom of Saudi Arabia Bachelor (Summa Cum Laude) in Mathematics of Economics and Finance, Comenius University, Slovakia",
+        "accolades": "Dean’s list, Academic Excellence Award, KAUST 2022 Al Kindi Statistics Research Student Award, KAUST 2021 Best Poster Award at the Data Science Summer School (DS3), Ecole Polytechnique, France, 2018 Best Paper Award at the NeurIPS 2020 Federated Learning Workshop Best Reviewer Award at NeurIPS 2020 Top Reviewer Award at NeurIPS 2019",
+        "publications": "",
+        "research": "“Fedshuffle: Recipes for better use of local work in federated learning”, S Horváth, M Sanjabi, L Xiao, P Richtárik, M Rabbat\" “Adaptivity of Stochastic Gradient Methods for Nonconvex Optimization”, S Horváth, L Lei, P Richtárik, MI Jordan,SIAM Journal on Mathematics of Data Science (SIMODS) “FjORD: Fair and Accurate Federated Learning under heterogeneous targets with Ordered Dropout”, S Horváth, S Laskaridis, M Almeida, I Leontiadis, SI Venieris, ND Lane, 35th Conference on Neural Information Processing Systems (NeurIPS 2021) “A Better Alternative to Error Feedback for Communication-Efficient Distributed Learning”, S Horváth, P Richtárik, International Conference on Learning Representations (ICLR 2021)"
+    }
+}
