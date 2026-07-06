@@ -30,9 +30,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 ### Step 3: Configure Your DeepInfra API Key
-open src/config.py
+open src/config.py   and update DEEPINFRA_API_KEY
 
-export DEEPINFRA_API_KEY="your-actual-api-key-here"
 
 ### Step 4: Launch the Streamlit Application
 streamlit run app.py
