@@ -1,6 +1,13 @@
 # MBZUAI RAG System – Faculty & Research Projects
 
-A hybrid RAG (Retrieval-Augmented Generation) system built for faculty profiles and research projects at MBZUAI. The system uses **LangGraph** orchestration with explicit gates for domain filtering, relevance scoring, ambiguity detection based on confidence, and configurable abstention by Threshold.
+A hybrid RAG (Retrieval-Augmented Generation) system built for  profiles and research projects at MBZUAI. The system uses **LangGraph** orchestration with explicit gates for domain filtering, relevance scoring, ambiguity detection based on confidence, and configurable abstention by Threshold.
+
+Please note that I am only using 
+
+1. Faculty data of Machine Learfacultyning department: https://mbzuai.ac.ae/research-department/machine-learning-department/
+
+
+2. esearch Projects: https://research.mbzuai.ac.ae/research-projects
 
 ---
 
@@ -23,9 +30,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 ### Step 3: Configure Your DeepInfra API Key
-open src/config.py
+open src/config.py   and update DEEPINFRA_API_KEY
 
-export DEEPINFRA_API_KEY="your-actual-api-key-here"
 
 ### Step 4: Launch the Streamlit Application
 streamlit run app.py
@@ -34,7 +40,7 @@ streamlit run app.py
 
 ###  Step 5: Testing
 Once the UI is open, you can test the agent's behavior. The system is designed to Answer, Ask Clarifying Questions, or Abstain depending on the query.
- For every query, click on the "📊 Analytics & Retrieval" tab inside the app. You will see the exact text chunks retrieved, the LLM's confidence score, and its step-by-step reasoning!
+ For every query, click on the "📊 Analytics & Retrieval" tab inside the app. You will see the exact text chunks retrieved, the LLM's confidence score, and other information
 
 ✅ Test 1: Answerable Questions (High Confidence)
 
