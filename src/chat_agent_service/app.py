@@ -7,8 +7,8 @@ st.config.set_option("server.address", "::")
 # Add parent directory to path to import the agent
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
-#from src.chat_agent_service.chat_agent import run_agent
-from src.chat_agent_service.chat_agent_v1 import run_agent
+from src.chat_agent_service.chat_agent import run_agent
+#from src.chat_agent_service.chat_agent_v1 import run_agent
 
 # --- Streamlit UI Setup ---
 st.set_page_config(page_title="MBZUAI Agent Chat", layout="wide")

@@ -17,3 +17,4 @@ faiss-cpu
 langchain 
 langchain-openai
 langgraph
+langchain_community
