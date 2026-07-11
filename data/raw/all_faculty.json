@@ -10,7 +10,8 @@
             "accolades": "Best Ph.D. Dissertation Award by the OR Society (2014). Leslie Fox Prize (2nd Prize; 2013) by the Institute for Mathematics and its Applications. INFORMS Computing Society Best Student Paper Award (runner up; 2012).",
             "publications": "Publication Martin Takáč",
             "research": "Takáč currently serves as an associate editor for Mathematical Programming Computation, Journal of Optimization Theory and Applications, and Optimization Methods and Software. Iteration complexity of randomized block-coordinate descent methods for minimizing a composite function. P Richtárik, M Takáč. Mathematical Programming 144 (1), 1-38, 2014. Parallel coordinate descent methods for big data optimization. P Richtárik, M Takáč. Mathematical Programming, Series A, 1-52, 2015. Reinforcement learning for solving the vehicle routing problem. M Nazari, A Oroojlooy, LV Snyder, M Takáč. Conference on Neural Information Processing Systems, NeurIPS, 2018. SARAH: A novel method for machine learning problems using stochastic recursive gradient. L Nguyen, J Liu, K Scheinberg, M Takáč. In 34th International Conference on Machine Learning, ICML, 2017. Communication-efficient distributed dual coordinate ascent. M Jaggi, V Smith, M Takác, J Terhorst, S Krishnan, T Hofmann, MI Jordan. Advances in neural information processing systems 27, 2014. Distributed coordinate descent method for learning with big data. P Richtárik, M Takác. Journal of Machine Learning Research 17, 1-25, 2016."
-        }
+        },
+        "id": 0
     },
     {
         "name": "Zangir Iklassov",
@@ -23,7 +24,8 @@
             "accolades": "Publications in top AI conferences: NeurIPS, ACL, IJCAI, ACML, IEEE Invited speaker, Oxford University Mathematical Institute Research Seminar (2024) Research visit at King’s College London, working on NLP for combinatorial problems Co-founder and successful exit of Smart System Technologies LTD Lead AI researcher for ADNOC’s EnergyAI LLM-powered industrial framework",
             "publications": "",
             "research": "SVRPBench: A Realistic Benchmark for Stochastic Vehicle Routing Problem, NeurIPS 2025 (submitted) LLM-BabyBench: Understanding and Evaluating Grounded Planning and Reasoning in LLMs, NeurIPS 2025 (submitted) Hypothesis-Powered End-to-End Agents of Data Science, ICML 2025 (submitted) Library-Like Behavior in Language Models is Enhanced by Self-Referencing Causal Cycles, ACL 2025 Self-Guiding Exploration for Combinatorial Problems, NeurIPS 2024 Reinforcement Learning for Solving Stochastic Vehicle Routing Problem, ACML 2023 Reinforcement Learning Approach to Stochastic Vehicle Routing Problem With Correlated Demands, IEEE Access 2023 On the Study of Curriculum Learning for Inferring Dispatching Policies on the Job Shop Scheduling, IJCAI 2023"
-        }
+        },
+        "id": 1
     },
     {
         "name": "Lijie Hu",
@@ -36,7 +38,8 @@
             "accolades": "Best of PODS 2022 King Abdullah University of Science and Technology (KAUST) Dean’s List Award in 2022 and 2024 Top Reviewer AISTATS 2023.",
             "publications": "",
             "research": "Professor Hu's research publications include: Zhuoran Zhang, Yongxiang Li, Zijian Kan, Keyuan Cheng, Lijie Hu, Di Wang. \"Locate-then-edit for Multi-hop Factual Recall under Knowledge Editing.\" ICML 2025. Lijie Hu , Chenyang Ren, Zhengyu Hu, Hongbin Lin, Cheng-Long Wang, Zhen Tan, Weimin Lyu, Jingfeng Zhang, Hui Xiong, Di Wang. \"Editable Concept Bottleneck Models.” ICML 2025. Lijie Hu, Tianhao Huang, Huanyi Xie, Xilin Gong, Chenyang Ren, Zhengyu Hu, Lu Yu, Ping Ma, Di Wang. \"Semi-supervised Concept Bottleneck Models.\" ICCV 2025. Lijie Hu, Songning Lai, Yuan Hua, Shu Yang, Jingfeng Zhang, Di Wang. \"Stable Vision Concept Transformers for Medical Diagnosis.\" ECML-PKDD 2025. Jia Li, Lijie Hu, Jingfeng Zhang, Tianhang Zheng, Hua Zhang, and Di Wang. \"Fair Text-to-Image Diffusion via Fair Mapping.” AAAI 2025, Oral. Lijie Hu, Tianhao Huang, Lu Yu, Wanyu Lin, Tianhang Zheng, and Di Wang. \"Faithful Interpretation for Graph Neural Networks.\" Transactions on Machine Learning Research. Lijie Hu, Xinhai Wang, Yixin Liu, Ninghao Liu, Mengdi Huai, Lichao Sun, and Di Wang. \"Towards Stable and Explainable Attention Mechanisms.\" IEEE Transactions on Knowledge and Data Engineering. Lijie Hu, Songning Lai, Wenshuo Chen, Hongru Xiao, Hongbin Lin, Lu Yu, Jingfeng Zhang, Di Wang. \"Towards Multi-dimensional Explanation Alignment for Medical Classification.\" NeurIPS 2024. Lijie Hu, Yixin Liu, Ninghao Liu, Mengdi Huai, Lichao Sun, and Di Wang. \"Improving Interpretation Faithfulness for Vision Transformers.\" ICML 2024, Spotlight. Songning Lai, Lijie Hu, Junxiao Wang, Laure Berti-Equille, and Di Wang. \"Faithful Vision-Language Interpretation via Concept Bottleneck Models.” ICLR 2024."
-        }
+        },
+        "id": 2
     },
     {
         "name": "Junpei Komiyama",
@@ -49,7 +52,8 @@
             "accolades": "Visiting researcher in RIKEN AIP since 2024. Action editor for Transactions on Machine Learning Research since 2024. Japanese translator of the well-known book Probabilistic Machine Learning: An Introduction, an introductory textbook on machine learning by Kevin P. Murphy. Research has appeared in top-tier venues including NeurIPS, ICML, AISTATS, KDD, Mathematics of Operations Research, and Management Science. He has served as an area chair for NeurIPS (2024–), AISTATS (2023–), ICML (2026–).",
             "publications": "",
             "research": "Junpei Komiyama, Taira Tsuchiya, and Junya Honda. “Minimax Optimal Algorithms for Fixed-Budget Best Arm Identification.” NeurIPS 2022. * Monte Carlo Tree Search Abe Kenshi, Junpei Komiyama, and Atsushi Iwasaki. “Anytime Capacity Expansion in Medical Residency Match by Monte Carlo Tree Search.” IJCAI 2022. * Mechanism design and market mechanisms Junpei Komiyama and Shunya Noda. “On Statistical Discrimination as a Failure of Social Learning: A Multiarmed Bandit Approach.” Management Science. * Reward learning, especially how machine learning systems can explore optimal decision-making."
-        }
+        },
+        "id": 3
     },
     {
         "name": "Éric Moulines",
@@ -62,7 +66,8 @@
             "accolades": "Best paper award from the IEEE Signal Processing Society (for publications in IEEE Trans. On Signal Processing) in 1997 and 2006 Silver Medal of the Centre National de Recherche Scientifique in 2010 Orange Prize of the French Academy of Sciences in 2011 Fellow of the IMS 2016 EURASIP technical achievement award 2020 Elected to the French Academy of Sciences in 2017",
             "publications": "",
             "research": "Moulines has published more than 120 articles in leading journals in signal processing, computational statistics, and applied probability, and more than 300 proceedings at major conferences on signal processing and machine learning. Gersende Fort, Pierre Gach, and Eric Moulines. Fast incremental expectation maximization for finite-sum optimization: nonasymptotic convergence. Statistics and Computing, 31(4):1–24, 2021. Aymeric Dieuleveut, Gersende Fort, Eric Moulines, and Genevieve Robin. Federated-EM with heterogeneity mitigation and variance reduction. In Advances in Neural Information Processing Systems, volume 35, 2021. Alain Durmus, Eric Moulines, Alexey Naumov, Sergey Samsonov, Kevin Scaman, and Hoi-To Wai. Tight high probability bounds for linear stochastic approximation with fixed stepsize. In Advances in Neural Information Processing Systems, volume 34, 2021. Alain Durmus, Eric Moulines, Eero Saksman, et al. Irreducibility and geometric ergodicity of Hamiltonian Monte Carlo. Annals of Statistics, 48(6):3545–3564, 2020. Geneviève Robin, Olga Klopp, Julie Josse, Eric Moulines, and Robert´ Tibshirani. Main effects and interactions in mixed and incomplete data frames. Journal of the American Statistical Association, 115 (ja):1292–1303, 2020. VAlain Durmus, Eric Moulines, and Marcelo Pereyra. Efficient Bayesian computation by proximal Markov chain Monte Carlo: when Langevin meets Moreau. SIAM J. Imaging Sci., 11(1):473– 506, 2018. ISSN 1936-4954."
-        }
+        },
+        "id": 4
     },
     {
         "name": "Steve Liu",
@@ -75,7 +80,8 @@
             "accolades": "Best Paper Award: paper \"What Appears Suboptimal May Surprise You: A Fixed-Rate Schedul- ing Policy for Geo-Distributed CoFlows,\" receives the Outstanding Paper Award of The 29th IEEE International Conference on Parallel and Distributed Systems (IEEE ICPADS 2023), 2023 Best Paper Award: paper \"CATS: A Computation-Aware Transaction Processing System with Proactive Unlocking,\" receives the Best Paper Award from The 2023 IEEE/ACM International Symposium on Quality of Service (IEEE/ACM IWQoS 2023), 2023 Fellow of Asia-Pacific Artificial Intelligence Association (AAIA), 2021 Fellow of the Canadian Academy of Engineering, 2021 Best Paper Award: paper \"One for All: Traffic Prediction at Heterogeneous 5G Edge with Data-Efficient Transfer Learning'' receives the Best Paper Award from 2021 IEEE Global Communications Conference (IEEE GLOBECOM 2021) Mobile and Wireless Networks Symposium, 2021 Best Paper Award: paper \"A Cost-Efficient Metadata Scheme for High-Performance Deduplication Systems'' receives the Best Paper Award from The 23rd IEEE International Conference on High Performance Computing and Communications (IEEE HPCC 2021), 2021 Best Paper Award: paper \"CE-Dedup: Cost-Effective Convolutional Neural Nets Training based on Image Deduplication''receives the Best Paper Award from The 19th IEEE International Symposium on Parallel and Distributed Processing with Applications (IEEE ISPA 2021), 2021 IEEE Fellow, IEEE, 2020 ACM Distinghuished Member, ACM, 2020 Best Paper Award: paper \"RadioLoc: Learning Vehicle Locations with FM Signal in All-Terrain Environments'' receives the Best Paper Award from The 16th IEEE International Conference on Mobile Ad-Hoc and Smart Systems (IEEE MASS), 2019 2017 Mitacs Award for Exceptional Leadership, MITACS, 2017 Best Paper Award: paper \"Towards a Cost-Efficient MapReduce: Mitigating Power Peaks for Hadoop Clusters'' receives the Best Paper Award of the Year from Tsinghua Science and Technology and IEEE, 2015 Outstanding Young Canadian Computer Science Researcher Prizes, The Canadian Association of Computer Science/Association informatique Canadienne, 2014 William Dawson Scholar (Chair Professor), McGill University, 2014 Tomlinson Scientist Award, McGill University, 2012 Best Paper Award: paper \"Inferring User's Online Activities through Traffic Analysis\" receives the First Place Best Paper Award (out of 87 submissions) from the Fourth ACM Conference on Wireless Network Security (WiSec'11), 2011 Paper \"Hardware/Software Partitioning and Pipelined Scheduling on Runtime Reconfigurable FPGAs\", published in ACM Transactions on Design Automation of Electronic Systems (TODAES), is the #2 of the Top 10 Downloaded ACM TODAES Articles in the year 2010 Samuel R. Thompson Chair Professorship, University of Nebraska Lincoln, 2010 - 2014 Outstanding Service Award, 7th IEEE International Conference on Embedded Software and Systems (ICESS-2010), 2010 John R. Evans Leaders Fund Award, Canada Foundation for Innovation, 2009 New Researcher Award, Quebec Fund for Research on Nature and Technology (FQRNT), 2009 Outstanding Leadership Award, 12th IEEE International Conference on Computational Science and Engineering (CSE 2009), 2009 Best Paper Award, IEEE Transactions on Industrial Informatics (TII), for the paper \"ORTEGA: An Efficient and Flexible Online Fault Tolerance Architecture for Real-Time Control Systems,\" 2008 Paper \"Lightning: A Hard Real-Time, Fast, and Lightweight Low-End Wireless Sensor Election Protocol for Acoustic Event Localization,\" in IEEE Transactions on Mobile Computing (TMC),Vol. 7, Issue 5, pp.570-584, May, 2008 Selected as the Featured Article of IEEE TMC 2008 May Issue Discovery Grant Award, Natural Sciences and Engineering Research Council of Canada (NSERC), 2007 Mavis Memorial Fund Scholarship Award, College of Engineering, UIUC, 2005-2006 4th Place, International MaRTian Task Robot Competition, in conjunction with RTSS’05, Miami, Florida, 2005 Outstanding TA Award, Department of Computer Science, UIUC, 2004 Outstanding Rating for Instructors, Incomplete List for Teaching Excellence, UIUC, Spring, 2004 Saburo Muroga Fellowship, Department of Computer Science, UIUC, 2003-2004 Member, Tau Beta Pi (Engineering Honor Society), 2002-now C.W. Gear Outstanding Graduate Award, Department of Computer Science, UIUC, 2002 Member, Phi Kappa Phi National Honor Society, 2002 Ray Ozzie Fellowship, Department of Computer Science, UIUC, 2000-2001",
             "publications": "",
             "research": ""
-        }
+        },
+        "id": 5
     },
     {
         "name": "Mingming Gong",
@@ -88,7 +94,8 @@
             "accolades": "ARC Discovery Early Career Research Award Grant CCF-Tencent Rhino-Bird Young Faculty Open Research Fund Global Top Chinese Young Scholar in Artificial Intelligence (by Baidu Academic) IJCAI 2020 early career spotlight CVPR 2019 best paper finalist (top 1%) 1st place in CVPR Robust Vision Challenge, 2018",
             "publications": "",
             "research": "Gong has authored and co-authored 50-plus research papers at top conferences such as ICML, NeurIPS, UAI, CVPR, etc. Dongting Hu, Liuhua Peng, Tingjin Chu, Xiaoxing Zhang, Yinian Mao, Howard Bondell, Mingming Gong : Uncertainty Quantification in Depth Estimation via Constrained Ordinal Regression. Proceedings of European Conference on Computer Vision (ECCV), Tel Aviv, Israel, 2022. Jian Zhang*, Jinchi Huang*, Bowen Cai*, Mingming Gong , Chaohui Wang, Jiaming Wang, Hongchen Luo, Rongfei Jia, Binqiang Zhao, Xing Tang, Huan Fu: Digging into Radiance Grid for Real-Time View Synthesis with Detail Preservation. Proceedings of European Conference on Computer Vision (ECCV), Tel Aviv, 2022. Yanwu Xu, Shaoan Xie, Maxwell Reynolds, Matthew Ragoza, Mingming Gong*, Kayhan Batmanghelich*: Adversarial Consistency for Single Domain Generalization in Medical Image Segmentation. Proceedings of International Conference on 25th Medical Image Computing and Computer Assisted Intervention (MICCAI), Singapore, 2022. Chaojian Yu, Bo Han, Li Shen, Jun Yu, Chen Gong, Mingming Gong , Tongliang Liu: Understanding Robust Overfitting of Adversarial Training and Beyond. Proceedings of the 38th International Conference on Machine Learning (ICML), Baltimore, Maryland, USA, 2022. Xiaobo Xia*, Shuo Shan*, Mingming Gong , Nannan Wang, Fei Gao, Haikun Wei, Tongliang Liu: Sample-Efficient Kernel Mean Estimator with Marginalized Corrupted Data. Proceedings of SIGKDD Con- ference on Knowledge Discovery and Data Mining (KDD), Washington DC, USA, 2022. Chaojian Yu, Bo Han, Mingming Gong , Li Shen, Shiming Ge, Bo Du, Tongliang Liu: Robust Weight Per- turbation for Adversarial Training. Proceedings of International Joint Conference on Artificial Intelligence (IJCAI), Messe Wien, Vienna, Austria, 2022."
-        }
+        },
+        "id": 6
     },
     {
         "name": "Maxim Panov",
@@ -101,7 +108,8 @@
             "accolades": "Best Paper Runner-up Award at UAI 2023 Skoltech Faculty Excellence Award 2022 Moscow Government Award for Young Scientists 2018.",
             "publications": "",
             "research": "Makni, V. Plassier, A. Rubashevskii, E. Moulines, M. Panov. Conformal Prediction for Federated Uncertainty Quantification Under Label Shift, ICML 2023 Vazhentsev, A. Tsvigun, G. Kuzmin, A. Panchenko, M. Panov, M. Burtsev and A. Shelmanov. Hybrid Uncertainty Estimation for Selective Text Classification in Ambiguous Tasks, Annual Meeting of Association of Computational Linguistics, ACL, 2023 Seddik, M. Tiomoko, A. Decurninge, M. Panov, M. Guillaud. Learning from Low Rank Tensor Data: A Random Tensor Theory Perspective, UAI 2023 Klopp, O., Panov, M., Sigalla, S. and Tsybakov, A. Assigning Topics to Documents by Successive Projections, Annals of Statistics, 2023 Kotelevskii, A. Artemenkov, K. Fedyanin, F. Noskov, A. Fishkov, A. Shelmanov, A. Vazhentsev, A. Petiushko, M. Panov. Nonparametric Uncertainty Quantification for Single Deterministic Neural Network, NeurIPS 2022 Velikanov, R. Kail, I. Anokhin, R. Vashurin, M. Panov, A. Zaytsev and D. Yarotsky. Embedded Ensembles: infinite width limit and operating regimes, AISTATS 2022"
-        }
+        },
+        "id": 7
     },
     {
         "name": "Zhiqiang Xu",
@@ -114,7 +122,8 @@
             "accolades": "",
             "publications": "Publication Zhiqiang Xu",
             "research": "Li has authored or co-authored more than 20 research papers with more than 600 citations. Zhiqiang Xu and Ping Li. Faster Noisy Power Method. ALT 2022. Zhiqiang Xu and Ping Li. A Comprehensively Tight Analysis of Gradient Descent for PCA. NeurIPS 2021. Zhiqiang Xu and Ping Li. On the Riemannian Search for Eigenvector Computation. JMLR 2021. Zhiqiang Xu and Ping Li. On the Faster Alternating Least-Squares for CCA. AISTATS 2021. Zhiqiang Xu and Ping Li. Towards Practical Alternating Least-Squares for CCA. NeurIPS 2019. Zhiqiang Xu. Gradient descent meets shift-and-invert preconditioning for eigenvector computation. NeurIPS 2018."
-        }
+        },
+        "id": 8
     },
     {
         "name": "Salem Lahlou",
@@ -127,7 +136,8 @@
             "accolades": "",
             "publications": "",
             "research": "Salem Lahlou, Tristan Deleu, Pablo Lemos, Dinghuai Zhang, Alexandra Volokhova, Alex Hernández-García, Lena Nehale Ezzine, Yoshua Bengio, Nikolay Malkin: “A Theory of Continuous Generative Flow Networks”. ICML 2023. Nikolay Malkin, Salem Lahlou, Tristan Deleu, Xu Ji, Edward Hu, Katie Everett, Dinghuai Zhang, Yoshua Bengio: “GFlowNets and variational inference”. ICLR 2023. Yoshua Bengio, Salem Lahlou, Tristan Deleu, Edward J. Hu, Mo Tiwari, Emmanuel Bengio: “GFlowNet Foundations”. JMLR 2023. Salem Lahlou, Moksh Jain, Hadi Nekoei, Victor I Butoi, Paul Bertin, Jarrid Rector-Brooks, Maksym Korablyov, Yoshua Bengio: “DEUP : Direct Epistemic Uncertainty Estimation”. TMLR 2023. Maxime Chevalier-Boisvert, Dzmitry Bahdanau, Salem Lahlou, Lucas Willems, Chitwan Saharia, Thien Huu Nguyen, Yoshua Bengio: “BabyAI : A Platform to Study the Sample Efficiency of Grounded Language Learning”. ICLR 2019. Salem Lahlou, Laura Wynter: “A Nash equilibrium formulation of a tradable credits scheme for incentivizing transport choices: From next-generation public transport mode choice to HOT lanes”. Transportation Research Part B 2017."
-        }
+        },
+        "id": 9
     },
     {
         "name": "Jin Tian",
@@ -140,7 +150,8 @@
             "accolades": "Editor-in-chief of the Journal of Causal Inference (JCI). since 2023. Action editor for the Journal of Machine Learning Research (JMLR), since 2022. Associate editor for the Artificial Intelligence Journal (AIJ), 2013-2020. Outstanding Paper Honorable Mention, the 32nd AAAI Conference on Artificial Intelligence (AAAI), 2018. General chair for the Conference on Uncertainty in Artificial Intelligence (UAI), 2015. Program Chair for the Conference on Uncertainty in Artificial Intelligence (UAI), 2014. Outstanding Paper Award, the Twenty-Eighth AAAI Conference on Artificial Intelligence (AAAI), 2014. Associate editor for Electronic Journal of Statistics (EJS), 2011-2012. Career Award, National Science Foundation (NSF), 2003.",
             "publications": "",
             "research": "Y Kawakami, M Kuroki, and J Tian: “Probabilities of Causation for Continuous and Vector Variables”, Proceedings of the Conference on Uncertainty in Artificial Intelligence (UAI) , 2024. Y Kawakami, M Kuroki, and J Tian: “Identification and Estimation of Conditional Average Partial Causal Effects via Instrumental Variable”, Proceedings of the Conference on Uncertainty in Artificial Intelligence (UAI) , 2024. Y. Jung, I. Díaz, J. Tian, and E. Bareinboim: “Estimating Causal Effects Identifiable from a Combination of Observations and Experiments”, Proceedings of the 37th Annual Conference on Neural Information Processing Systems (NeurIPS) , 2023. Y. Jung, J. Tian, and E. Bareinboim: “Estimating Joint Treatment Effects by Combining Multiple Experiments”, Proceedings of the 40th International Conference on Machine Learning (ICML) , 2023. T. V. Anand, A. H. Ribeiro, J. Tian, and E. Bareinboim: “Causal Effect Identification in Cluster DAGs”, Proceedings of the 37th AAAI Conference on Artificial Intelligence (AAAI) , 2023. Yaojie Hu and Jin Tian: “Neuron Dependency Graphs: A Causal Abstraction of Neural Networks”, Proceedings of the 39th International Conference on Machine Learning (ICML) , 2022."
-        }
+        },
+        "id": 10
     },
     {
         "name": "Zhiqiang Shen",
@@ -153,7 +164,8 @@
             "accolades": "CVPR 2019 doctoral consortium award AAAI 2019 student scholarship award iMaterialist Challenge on Product Recognition (Fine-grained image classification of products at FGVC6, CVPR'19 workshop): Ranked fourth globally (team leader) MSR-VTT Challenge (video captioning) 2016: Ranked fourth in human evaluation and ranked fifth in the automatic evaluation metrics (team leader) Top 10% in Kaggle Competition of Right Whale Recognition, 2016",
             "publications": "",
             "research": "Shen has been a conference and journal reviewer for top tier computer science conferences and journals. In 2023, he was a meta-reviewer (SPC) at the Association for the Advancement of Artificial Intelligence (AAAI) Conference on Artificial Intelligence 2023. Zhiqiang Shen, Eric Xing. “A Fast Knowledge Distillation Framework for Visual Recognition”. ECCV 2022. Zhiqiang Shen, Zechun Liu, Eric Xing. “Sliced Recursive Transformer”. ECCV 2022. Zhiqiang Shen, Zechun Liu, Dejia Xu, Zitian Chen, Kwang-Ting Cheng, Marios Savvides. “Is Label Smoothing Truly Incompatible with Knowledge Distillation: An Empirical Study”. ICLR 2021. Zechun Liu*, Zhiqiang Shen*, Shichao Li, Koen Helwegen, Dong Huang, Kwang-Ting Cheng. “How Do Adam and Training Strategies Help BNNs Optimization?”. ICML 2021. Zhiqiang Shen, Zechun Liu, Zhuang Liu, Marios Savvides, Trevor Darrell, Eric Xing. “Un-Mix: Rethinking Image Mixture for Unsupervised Visual Representation Learning”. AAAI 2022. Zhiqiang Shen, Zechun Liu, Jie Qin, Lei Huang, Kwang-Ting Cheng, Marios Savvides. “S2-BNN: Bridging the Gap Between Self-Supervised Real and 1-bit Neural Networks via Guided Distribution Calibration”. CVPR 2021."
-        }
+        },
+        "id": 11
     },
     {
         "name": "Mohsen Guizani",
@@ -166,7 +178,8 @@
             "accolades": "Best Journal Paper Award, IEEE International Communications Conference (ICC), Seoul, South Korea, May 16-20, 2022. Clarivate Analytics Highly Cited Researcher in Computer Science in 2019, 2020 and 2021. Conference (ICC), Virtual, June 7-11, 2020. Best Paper Award, IEEE GLOBECOM (Global Comm.). 2019 IEEE Communications and Information Security Technical Recognition (CISTC) Award. Conference, Abu Dhabi, December 9-13, 2018. IEEE ComSoc Best Survey Paper Award, the most prestigious ComSoc paper Award for journal survey papers, 2018. Best Paper Award, IEEE International Communications. 2018 Ad-Hoc Technical Committee Recognition Award. Best Paper Award, IEEE GLOBECOM (Global Comm.). 2017 IEEE Communications Society Wireless Technical Committee (WTC) Recognition Award. Conference, Washington DC, December 4-8, 2016. 2015 IEEE Communications Society Best Transaction Paper Award. Best Paper Award, IEEE International Communications Conference (ICC), Sydney, Australia, June 10-14, 2014. Best Paper Award, IEEE ComManTel 2014 (Computing, Management and Telecom.), Da Nang, Vietnam, April 27–29, 2014. IEEE Fellow, 2009 for his contribution to \"quality of service in broadband and ad hoc wireless networks\". Senior Technical Editor of the IEEE Network. Advisory Board Editor of the IEEE Internet of Things Journal. IEEE Communication Society Distinguished Lecturer. Founder of the IEEE International Conference of Wireless Communications and Mobile Computing (IWCMC). Founder of WISE (a non-profit organization for education).",
             "publications": "Publication Mohsen Guizani",
             "research": "Guizani has published extensively in high-impact journals and conferences. He has authored/co-authored 10 books and more than 800 technical papers in top journals and conferences and has been granted more than 10 U.S. patents. Internet of things: A survey on enabling technologies, protocols, and applications. A Al-Fuqaha, M Guizani, M Mohammadi, M Aledhari, M Ayyash. IEEE communications surveys & tutorials 17 (4), 2347-2376, 2015. Unmanned aerial vehicles (UAVs): A survey on civil applications and key research challenges. H Shakhatreh, AH Sawalmeh, A Al-Fuqaha, Z Dou, E Almaita, I Khalil, et al. Ieee Access 7, 48572-48634, 2019. Deep learning for IoT big data and streaming analytics: A survey. M Mohammadi, A Al-Fuqaha, S Sorour, M Guizani. IEEE Communications Surveys & Tutorials 20 (4), 2923-2960, 2018. MeDShare: Trust-less medical data sharing among cloud service providers via blockchain. QI Xia, EB Sifah, KO Asamoah, J Gao, X Du, M Guizani. IEEE access 5, 14757-14767, 2017. 5G wireless backhaul networks: challenges and research advances. X Ge, H Cheng, M Guizani, T Han. IEEE network 28 (6), 6-11, 2014. A comprehensive review of the COVID-19 pandemic and the role of IoT, drones, AI, blockchain, and 5G in managing its impact. V Chamola, V Hassija, V Gupta, M Guizani. Ieee access 8, 90225-90265, 2020."
-        }
+        },
+        "id": 12
     },
     {
         "name": "Raul Astudillo Marban",
@@ -179,7 +192,8 @@
             "accolades": "Rising Star in Data Science, University of Chicago and UC San Diego, 2024. Rising Star in Management Science & Engineering, Stanford University, 2024. Finalist, INFORMS Data Mining Best Paper Competition, 2024. Finalist, INFORMS Undergraduate Operations Research Prize Competition (Mentee), 2024. Computing, Data, and Society Postdoctoral Fellowship, California Institute of Technology, 2024–2025. Spotlight Presentation, ICML Workshop on Adaptive Experimental Design, 2022.",
             "publications": "",
             "research": "Recent Publications: J. Yang, W. Chu, D. Khalil, R. Astudillo, F. Arnold, and Y. Yue, “Steering generative models with experimental data for protein fitness optimization,” ICLR Workshop on Generative and Experimental Perspectives for Biomolecular Design, 2025. J. Yang, R. Lal, J. Bowden, R. Astudillo, M. Hameedi, Y. Yue, and F. Arnold, “Active learning-assisted directed evolution,” Nature Communications, 2025. C. Cheng, R. Astudillo, T. Desautels, and Y. Yue, “Practical Bayesian algorithm execution via posterior sampling,” NeurIPS, 2024. (Finalist, INFORMS Undergraduate Operations Research Prize Competition) Q. Xie, R. Astudillo, P. Frazier, Z. Scully, and A. Terein, “Cost-aware Bayesian optimization via the Pandora’s box Gittins index,” NeurIPS, 2024. (Finalist, INFORMS Data Mining Best Paper Competition) R. Astudillo, Z. Lin, E. Bakshy, and P. Frazier, “qEUBO: A decision-theoretic acquisition function for preferential Bayesian optimization,” AISTATS, 2023. R. Astudillo and P. Frazier, “Bayesian optimization of function networks,” NeurIPS, 2021."
-        }
+        },
+        "id": 13
     },
     {
         "name": "Umang Bhatt",
@@ -192,7 +206,8 @@
             "accolades": "Center for Democracy & Technology Fellowship: 2024 – 2026 New York University Center for Data Science Faculty Fellowship: 2023-2025 The Alan Turing Institute Enrichment Studentship: 2021 – 2022 Mozilla Fellowship: 2020 – 2021 Partnership on AI Research Fellowship: 2019 – 2020 Leverhulme Center for the Future of Intelligence PhD Scholarship: 2019 – 2023",
             "publications": "",
             "research": "Nature Human Behavior, 2024 – Building Machines that Learn and Think with People (Katherine Collins, Ilia Sucholutsky, Umang Bhatt, Kartik Chandra, Lionel Wong, Mina Lee, Cedegao Zhang, Tan Zhi-Xuan, Mark Ho, Vikash Mansinghka, Adrian Weller, Joshua Tenenbaum, Thomas Griffiths) IEEE Computer, 2024 – When Should Algorithms Resign? A Proposal for AI Governance (Umang Bhatt, Holli Sargeant) Proceedings of the National Academy of Sciences, 2024 – Evaluating Language Models for Mathematics through Interactions (Katherine Collins, Albert Jiang, Simon Frieder, Lionel Wong, Miri Zilka, Umang Bhatt, Thomas Lukasiewicz, Yuhuai Wu, Joshua Tenenbaum, William Hart, Timothy Gowers, Wenda Li, Adrian Weller, Mateja Jamnik) ACM Conference on Fairness, Accountability, and Transparency (FAccT), 2020 – Explainable Machine Learning in Deployment (Umang Bhatt, Alice Xiang, Shubham Sharma, Adrian Weller, Ankur Taly, Yunhan Jia, Joydeep Ghosh, Ruchir Puri, José M. F. Moura, Peter Eckersley)"
-        }
+        },
+        "id": 14
     },
     {
         "name": "Praneeth Vepakomma",
@@ -205,7 +220,8 @@
             "accolades": "(Fellowship) Won the Meta (previously FB) 2022 Phd Research Fellowship (37 fellows selected out of 2300 applicants). Featured on MIT News with three other fellowship recipients. (Fellowship) ADIA Lab (Abu Dhabi Investment Authority Lab) Fellowship, Mar 1, 2024-Feb 28, 2025. (Award) Non-Profit I co-founded (Integrity Distributed) won Financial Times Digital Innovation Award . (Scholarship) Selected as a SERC Scholar (Social and Ethical Responsibilities of Computing Scholar) by MIT’s Schwarzman College of Computing. My work on split learning featured on MIT Technology Review and MIT News . (Award) NoPeek-Infer won a Mukh Best Paper Runner Up Award at IEEE International Conference on Automatic Face and Gesture Recognition (FG 2021) conference. (Award) FedML work won a Baidu Best Paper Award at NeurIPS 2020-SpicyFL. He was a mentor at the upcoming United Nations Privacy Enhancing Technologies/U.N PET lab 's first global hackathon. (Award) Won the FL-IJCAI'22 Best Student Paper Award , at the International Workshop on Trustworthy Federated Learning  in Conjunction with IJCAI 2022 (FL-IJCAI'22).",
             "publications": "",
             "research": "Posthoc privacy guarantees for collaborative inference with modified Propose-Test-Release, (PDF) , @ NeurIPS 2023 Conference, Thirty-seventh Conference on Neural Information Processing Systems, Abhishek Singh, Praneeth Vepakomma, Vivek Sharma, Ramesh Raskar , Topic: Differential privacy, formalizes privacy of informal ML pipelines, Distributed/Collaborative Inference (2023) PrivateMail: Differentially private supervised manifold learning of deep features with privacy, @ AAAI 2022, 36th AAAI Conference on Artificial Intelligence, (AAAI 2022) (Oral), Praneeth Vepakomma, Julia Balla, Ramesh Raskar, Topic: Differential Privacy, Privacy Preserving ML, On-device ML (2022) Differentially private Fréchet Mean on the Manifold of Symmetric Positive Definite (SPD) Matrices (PDF) , @ TMLR , Transactions on Machine Learning Research, Saiteja Utpala, Praneeth Vepakomma, Nina Miolane , (Journal), Topic: Geometric Statistics, Differential Privacy, Differential Geometry (2023) DISCO: Dynamic and invariant sensitive channel obfuscation for deep neural networks, @ CVPR 2021, IEEE Computer Vision and Pattern Recognition Conference, A.Singh, A.Chopra,V.Sharma, E.Garza, E.Zhang, P.Vepakomma, R.Raskar, Topic: Preventing reconstruction attacks, Distributed Inference, (CVPR 2021) Supervised Dimensionality Reduction via Maximization of Distance Correlation, @ Electronic Journal of Statistics , (Journal),  P.Vepakomma, C. Tonde and A.Elgammal, Topic: Statistics, Optimization, ML . (2018) Advances and open problems in federated learning , (PDF) @ Foundations and Trends in Machine Learning, Vol 14, Issue 1–2 with 58 authors from 25 institutions Parallel quasi-concave set function optimization for scalability even without submodularity, @IEEE HPEC High Performance Extreme Computing Conference, Praneeth Vepakomma, Yulia Kempner, Rodmy Paredes Alfaro, Ramesh Raskar, Topic: Parallel Combinatorial Optimization (2023)"
-        }
+        },
+        "id": 15
     },
     {
         "name": "Gus Xia",
@@ -218,7 +234,8 @@
             "accolades": "Keynote speaker, DMRN+16: Digital Music Research Network One-day Workshop, 2021 Keynote speaker, TechMe Week, Online & Tencent, 2021 “MIR for Human Health and Potential” panelist, ISMIR, 2021 Panel chair on “MIR Technology Across Culture”, ISMIR, 2021 General co-chair for NIME Conference, 2021 Keynote speaker, Seeds for the Future Year End Celebration, Online, 2020 Music co-chair for MuMe workshop, 2019 Eastern Young Scholar, Shanghai Ministry of Education, 2017 “Future of MIR” panelist, ISMIR, 2017 Music chair for ISMIR Conference, 2017 Turing Test for Creative Arts Competition Organizer, Dartmouth College, 2017 3-Minute Thesis Presentation Competition Finalist, Carnegie Mellon University, 2015 Graduate Student Assembly Representative, Carnegie Mellon University, 2013-2014 Team Leader for OurCS Computer Music Group, Carnegie Mellon University, 2013, 2015 Outstanding Society Leadership Award (2 out of 260), Peking University, 2009 President and Music Director of Chinese Music Institute, Peking University, 2007-2009 Volunteer for Olympic Games, Beijing, 2008 Selected Student Delegation out of 2000+ candidates for BESETOHA Forum, Tokyo, 2007 1st place out of 3000+ in the National Musical Instrument Proficiency Evaluation, China, 2006",
             "publications": "",
             "research": "Xia researches and designs intelligent systems to “understand” and “extend” musical creativity and expression. To “understand” means to learn the musical representation conveyed through sounds, performances, and symbolic compositions. To “extend” means to use such an understanding to create artificial music partners, serving music lovers at all levels. Wang, D. Xu, G. Xia, Y. Shan, “Audio-to-symbolic Arrangement via Cross-modal Music Representation Learning”, in Proc. 47th International Conference on Acoustics, Speech and Signal Processing. Singapore & Online, May 2022. Wei, G. Xia, W. Gao, L. Lin, Y. Zhang, “Music Phrase Inpainting Using Long-term Representation and Contrastive Loss”, in Proc. 47th International Conference on Acoustics, Speech and Signal Processing. Singapore & Online, May 2022. Chin, G. Xia, “A Computer-aided Multimodal Music Learning System with Curriculum: A Pilot Study”, in Proc. 2nd International Conference on New Interfaces for Musical Expression , New Zealand, July 2021. Piao, G. Xia, “Sensing the Breath: A Multimodal Singing Tutoring Interface with Breath Guidance”, in Proc. 2nd International Conference on New Interfaces for Musical Expression , New Zealand, July 2021. 2021 Zhao, G. Xia, “AccoMontage: Accompaniment Arrangement via Phrase Selection and Style Transfer”, in Proc. 22nd International Society for Music Information Retrieval Conference , Online, Oct 2021. Lin, Q. Kong, J. Jiang, G. Xia, “A Unified Model for Zero-shot Music Source Separation, Transcription and Synthesis”, in Proc. 22nd International Society for Music Information Retrieval Conference , Online, Oct 2021."
-        }
+        },
+        "id": 16
     },
     {
         "name": "Chih-Jen Lin",
@@ -231,7 +248,8 @@
             "accolades": "Fellow, Association for Computing Machinery (ACM), 2015 Fellow, Association of Advancement of Artificial Intelligence (AAAI), 2014 Fellow, Institute of Electrical and Electronics Engineers (IEEE), 2011 Distinguished Scientist, Association for Computing Machinery (ACM), 2011 Best paper award, ACML (Asian Conference on Machine Learning) 2018 (with two students) Best paper award, ACM Recommender Systems 2013 (with three students) Best paper award, ACM KDD 2010 (with three students)",
             "publications": "",
             "research": "Lin has been a leading researcher in the field of machine learning algorithms and software design. His contributions to bridge optimization and machine learning include the creation of effective algorithms for support vector machines (SVM) and large-scale linear classification. Li-ChungLin, Cheng-Hung Liu, Chih-Ming Chen, Kai-Chin Hsu, I-Feng Wu, Ming-Feng Tsai, and Chih-Jen  On the use of unrealistic predictions in hundreds of papers evaluating graph representations. In Proceedings of the Thirty-Sixth AAAI Conference on Artificial Intelligence (AAAI), 2022. Bowen Yuan, Yu-Sheng Li, Pengrui Quan, andChih-Jen  Efficient optimization methods for extreme similarity learning with nonlinear embeddings. In Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2021. Yuchin Juan, Yong Zhuang, Wei-Sheng Chin, andChih-Jen  Field-aware factorization machines for CTR prediction. In Proceedings of the ACM Recommender Systems Conference (RecSys), 2016. Chih-Chung Chang andChih-Jen  LIBSVM: a library for support vector machines. ACM Transactions on Intelligent Systems and Technology,\r\n2(3):27:1-27:27, 2011. Rong-En Fan, Kai-Wei Chang, Cho-Jui Hsieh, Xiang-Rui Wang, andChih-Jen  LIBLINEAR: a library for large linear classification. Journal of\r\nMachine Learning Research, 9:1871-1874, 2008. Chih-Wei Hsu andChih-Jen  A comparison of methods for multi-class support vector machines. IEEE Transactions on Neural Networks,\r\n13(2):415-425, 2002."
-        }
+        },
+        "id": 17
     },
     {
         "name": "Le Song",
@@ -244,7 +262,8 @@
             "accolades": "Best paper award at the ACM Conference on Recommendation System (Recsys) in 2016. Best paper award at Artificial Intelligence and Statistics (AISTATS) in 2016. Best paper award at IEEE International Parallel and Distributed Processing Symposium (IPDPS) in 2015. Recipient of the National Science Foundation CAREER Award in 2014. Outstanding Junior Faculty Research Award in 2014. Lockheed Martin Inspirational Young Faculty Award in 2014. Best paper award at Neural Information Processing Systems (NeurIPS) in 2013. Best paper award at International Conference on Machine Learning (ICML) in 2010.",
             "publications": "Publication Le Song",
             "research": "Song has published more than 160 papers in peer-reviewed, top machine learning conferences and journals such as NeurIPS, ICML, ICLR, AISTATS and JMLR. Molecule Generation for Drug Design: a Graph Learning Perspective. N Yang, H Wu, J Yan, X Pan, Y Yuan, L Song. arXiv preprint arXiv:2202.09212. 2022. Method and apparatus for processing user interaction sequence data. X Chang, J Wen, X Liu, L Song, Y Qi. US Patent 11,250,088. 2022. Learning Temporal Rules from Noisy Timeseries Data. K Samel, Z Zhao, B Chen, S Li, D Subramanian, I Essa, L Song. arXiv preprint arXiv:2202.05403. 2022. Sphereface: Deep hypersphere embedding for face recognition. W Liu, Y Wen, Z Yu, M Li, B Raj, L Song. Proceedings of the IEEE conference on computer vision and pattern. 2017. Learning combinatorial optimization algorithms over graphs. E Khalil, H Dai, Y Zhang, B Dilkina, L Song. Advances in neural information processing systems 30, 2017. A Hilbert space embedding for distributions. A Smola, A Gretton, L Song, B Schölkopf. International Conference on Algorithmic Learning Theory, 13-31, 2007."
-        }
+        },
+        "id": 18
     },
     {
         "name": "Roman Bresson",
@@ -257,7 +276,8 @@
             "accolades": "Thales Ph.D. Award 2023. Patents: \"Method for generating a decision support system and associated systems, FR2005894, 2020\", \"Method and system for supervising a tracking system, FR1915153, 2021\", \"Method for evaluating the compliance of a tracking system using a restricted number of measurements and associated devices, WO2025008535A1, 2024\".",
             "publications": "",
             "research": "OMIDIENT: Multiomics Integration for Cancer by Dirichlet Auto-Encoder Networks N Safinianaini, N Välimäki, R Bresson, A Gorbonos, K Rajamäki, L A Aaltonen, P Marttinen bioRxiv, 2025.07. 02.662608, 2025 Obtaining Example-Based Explanations from Deep Neural Networks G Dong, H Boström, M Vazirgiannis, R Bresson IDA 2025 Prediction Via Shapley Value Regression A Alkhatib, R Bresson, H Boström, M Vazirgiannis The International Conference on Machine Learning (ICML2025) KAGNNs: Kolmogorov-Arnold Networks meet Graph Learning R Bresson, G Nikolentzos, G Panagopoulos, M Chatzianastasis, J Pang, M Vazirgiannis TMLR (2025) Cutting the Black Box: Conceptual Interpretation of a Deep Neural Net with Multi-Modal Embeddings and Multi-Criteria Decision Aid N Atienza, R Bresson, C Rousselot, P Caillou, J Cohen, C Labreuche, M Sebag IJCAI24"
-        }
+        },
+        "id": 19
     },
     {
         "name": "Velibor Bojkovic",
@@ -270,7 +290,8 @@
             "accolades": "ALGANT Doc European Commission schoolarship for PhD studies ALGANT Master European Commission scholarship for MSc studies",
             "publications": "",
             "research": "V. Bojkovic, X. Wu, B. Gu, \"Temporal Misalignment in ANN-SNN Conversion and Its Mitigation via Probabilistic Spiking Neurons\", ICML 2025 X. Wu, V. Bojkovic et al. \"FTBC: Forward Temporal Bias Correction for Optimizing ANN-SNN Conversion\", ECCV, 2024 V. Bojkovic, S. Anumasa et al. \"Data Driven Threshold and Potential Initialization for Spiking Neural Networks, AISTATS, 2024 B. Mukhoty, V. Bojkovic et al. \"Direct Training of SNNs Using Local Zeroth Order Method\", NEURIPS, 2023 V. Bojkovic, J. Poineau, \"Pushforwards of p-adic differential equations\", American Journal of Mathematics, 2020 F. Baldassarri, V. Bojkovic, Metric Uniformization of morphisms of Berkovich curves via p-adic differential equations (joint with F. Baldassarri), Israel Journal of Mathematics, 2021 V. Bojkovic, J. Poineau, \"On the number of connected components of the ramification locus of a morphism of Berkovich curves\", Mathematische Annalen, 2018 V. Bojkovic, \"Riemann-Hurwitz formula for finite morphisms of p-adic curves\", Mathematische Zeitschrift, 2018"
-        }
+        },
+        "id": 20
     },
     {
         "name": "Polykarpos Meladianos",
@@ -283,7 +304,8 @@
             "accolades": "",
             "publications": "",
             "research": "Graph classification with 2D CNNs, ICANN 2019 Kernel Graph Convolutional Neural Networks, ICANN 2018 An optimization approach for sub-event detection and summarization in Twitter, ECIR 2018 Unsupervised abstractive meeting summarization, ACL 2018 A Degeneracy Framework for Graph Similarity, IJCAI 2018 Word embeddings from large-scale Greek web content, arXiv 2018 K-clique-graphs for dense subgraph discovery, ECML/PKDD 2017 Matching node embeddings for graph similarity, AAAI 2017 Real-time keyword extraction from conversations, EACL 2017 Classifying graphs as images with CNNs, arXiv 2017 Combining graph degeneracy and submodularity for extractive summarization, 2017"
-        }
+        },
+        "id": 21
     },
     {
         "name": "Qirong Ho",
@@ -296,7 +318,8 @@
             "accolades": "Jay Lepreau Best Paper Award, the 15th USENIX Symposium on Operating Systems Design and Implementation, 2021 (OSDI '21) Best Paper Award, Managed Communication and Consistency for Fast Data-Parallel Iterative Analytics, ACM Symposium on Cloud Computing, 2015 (SoCC 2015) 2015 SIGKDD Dissertation Award (runner-up) for his doctoral thesis.",
             "publications": "Publication Qirong Ho",
             "research": "Ho has published more than 70 papers with more than 3400 citations. He holds U.S. patents in the areas of distributed deep learning and machine learning, AI operating systems, and elastic management of machine learning computing. Pollux: Co-adaptive cluster scheduling for goodput-optimized deep learning (OSDI, 2021). Poseidon: An efficient communication architecture for distributed deep learning on GPU clusters (USENIX ATC, 2017). Strategies and principles of distributed machine learning on big data (Engineering, Vol 2, Issue 2, 2016). Petuum: A new platform for distributed machine learning on big data (IEEE Transactions on Big Data, Vol 1(2), 2015). More effective distributed ml via a stale synchronous parallel parameter server (NeurIPS, 2013). Analyzing Time-Evolving Networks using an Evolving Cluster Mixed Membership Stochastic Blockmodel ( Handbook of Mixed Membership Models and its Applications , Chapter 22, 2014)."
-        }
+        },
+        "id": 22
     },
     {
         "name": "Tongliang Liu",
@@ -309,7 +332,8 @@
             "accolades": "2022, Future Fellowship - Australian Research Council (ARC) 2022, Faculty Award - OPPO 2022, Best Paper Honorable Mention Award- IEEE MMSP 2022, Best Paper Award - ACM Mobiarch 2022, Meituan Faculty Research Award for Collaboration Exploration 2022, Global Top Young Chinese Scholars in AI – Baidu Scholar 2022 2021, Early Career Research Excellence – Faculty of Engineering, University of Sydney 2021, Best VisNotes Paper Award – IEEE PacificVis 2021, Best Workshop Paper Runner-up Award – Masked Face Recognition Challenge and Workshop, CVPR 2021, Quantification of Uncertainties in Biomedical Image Quantification Challenge Award (2nd place) – MICCAI 2021, Bioengineering and Digital Science Catalyst Award – Cardiovascular Initiative 2020, Early Career Researcher Award Honourable Mention – Australian Pattern Recognition Society (APRS) 2020, Named in the Early Achievers Leadboard (five across Australia in Engineering and Computer Sciences) - The Australian 2019, Best Paper Award - IEEE International Conference on Multimedia and Expo (ICME) 2019, J G Russell Award Shortlisted - Australian Academy of Science (AAS) 2019, Discovery Early Career Research Award (DECRA) Fellowship - Australian Research Council (ARC) 2017, Distinguished Paper Candidate - International Joint Conference on Artificial Intelligence (IJCAI) 2016, IEEE Transactions on Cybernetics Outstanding Reviewer Award- IEEE 2014, Best Paper Award - IEEE International Conference on Information Science and Tech (ICIST) 2014, Computational Statistics and Data Analysis Outstanding Reviewer Award - ELSEVIER",
             "publications": "",
             "research": "Lui has previously been the senior meta-reviewer of AAAI and IJCAI and is regularly the meta-reviewer of ICML, NeurIPS, ICLR, AAAI, and IJCAI. Classification with Noisy Labels by Importance Reweighting. T. Liu and D. Tao. IEEE T-PAMI , 38(3): 447-461, 2016. Algorithmic Stability and Hypothesis Complexity. T. Liu , G. Lugosi, G. Neu and D. Tao. In ICML , 2017. Modeling Adversarial Noise for Adversarial Defense. D. Zhou, N. Wang, B. Han, and T. Liu . In ICML , 2022. Part-dependent Label Noise: Towards Instance-dependent Label Noise. [Spotlight] X. Xia, T. Liu , B. Han, N. Wang, M. Gong, H. Liu, G. Niu, D. Tao, and M. Sugiyama. In NeurIPS , 2020. Domain Adaptation with Conditional Transferable Components. M. Gong, K. Zhang, T. Liu , D. Tao, C. Glymour, and B. Schölkopf. In ICML , 2016. Instance-Dependent Label-Noise Learning under Structural Causal Models. Y. Yao, T. Liu , M. Gong, B. Han, G. Niu, and K. Zhang. In NeurIPS , 2021."
-        }
+        },
+        "id": 23
     },
     {
         "name": "Samuel Horváth",
@@ -322,7 +346,8 @@
             "accolades": "Dean’s list, Academic Excellence Award, KAUST 2022 Al Kindi Statistics Research Student Award, KAUST 2021 Best Poster Award at the Data Science Summer School (DS3), Ecole Polytechnique, France, 2018 Best Paper Award at the NeurIPS 2020 Federated Learning Workshop Best Reviewer Award at NeurIPS 2020 Top Reviewer Award at NeurIPS 2019",
             "publications": "",
             "research": "“Fedshuffle: Recipes for better use of local work in federated learning”, S Horváth, M Sanjabi, L Xiao, P Richtárik, M Rabbat\" “Adaptivity of Stochastic Gradient Methods for Nonconvex Optimization”, S Horváth, L Lei, P Richtárik, MI Jordan,SIAM Journal on Mathematics of Data Science (SIMODS) “FjORD: Fair and Accurate Federated Learning under heterogeneous targets with Ordered Dropout”, S Horváth, S Laskaridis, M Almeida, I Leontiadis, SI Venieris, ND Lane, 35th Conference on Neural Information Processing Systems (NeurIPS 2021) “A Better Alternative to Error Feedback for Communication-Efficient Distributed Learning”, S Horváth, P Richtárik, International Conference on Learning Representations (ICLR 2021)"
-        }
+        },
+        "id": 24
     },
     {
         "name": "Michael Jordan",
@@ -335,7 +360,8 @@
             "accolades": "Ulf Grenander Prize in Stochastic Theory and Modeling, American Mathematical Society, 2021. Vannevar Bush Faculty Fellowship, 2021-2026. Honorary Doctorate of Engineering and Technology, Yale University, 2020. John von Neumann Medal, IEEE, 2020. World’s Most Innovative People Award, World Summit on Innovation and Entrepreneurship, 2019. Miller Research Professorship, University of California, Berkeley, 2017-2018. IJCAI Award for Research Excellence, 2016. David E. Rumelhart Prize, 2015. Fellow, International Society for Bayesian Analysis (ISBA), 2014. Fellow, Society for Industrial and Applied Mathematics (SIAM), 2012. Fellow, Association for Computing Machinery (ACM), 2010. Fellow, Cognitive Science Society (CSS), 2010. ACM/AAAI Allen Newell Award, 2009. Honorary Professor of Hebei University, China, 2009. SIAM Activity Group on Optimization Prize, 2008. Miller Research Professorship, University of California, Berkeley, 2008. Fellow, American Statistical Association (ASA), 2007. Fellow, American Association for the Advancement of Science (AAAS), 2006. IEEE Neural Networks Pioneer Award, 2006. Pehong Chen Distinguished Professorship, University of California, 2006. Diane S. McEntyre Award for Excellence in Teaching, 2006. Fellow, Institute of Mathematical Statistics (IMS), 2005. Fellow, Institute of Electrical and Electronics Engineers (IEEE), 2005. Fellow, American Association for Artificial Intelligence (AAAI), 2002. MIT Class of 1947 Career Development Award, 1992 – 1995. NSF Presidential Young Investigator Award, 1991 – 1996.",
             "publications": "Publication Michael I. Jordan",
             "research": "Jordan is one of the leading figures in machine learning, and in 2016 Science named him the world’s most influential computer scientist. J. D. Lee, M. Jordan, B. Recht, and M. Simchowitz, “Gradient Descent Only Converges to Minimizers,” in Proceedings of the 29th Conference on Learning Theory, {COLT} 2016, New York, USA, June 23-26, 2016, 2016, pp. 1246--1257. X. Pan, M. Lam, S. Tu, D. Papailiopoulos, C. Zhang, M. Jordan, K. Ramchandran, C. Re, and B. Recht, “Cyclades: Conflict-free Asynchronous Machine Learning,” in Advances in Neural Information Processing Systems 29, 2016. X. Pan, D. Papailiopoulos, S. Omyak, B. Recht, K. Ramchandran, and M. Jordan, “Parallel correlation clustering on big graphs,” in Advances in Neural Information Processing Systems 28, 2015, pp. 82--90. X. Pan, S. Jegelka, J. E. Gonzalez, J. K. Bradley, and M. Jordan, “Parallel Double Greedy Submodular Maximization,” in Advances in Neural Information Processing Systems 27, 2014. X. Pan, J. E. Gonzalez, S. Jegelka, T. Broderick, and M. Jordan, “Optimistic concurrency control for distributed unsupervised learning,” in Advances in Neural Information Processing Systems 26, 2013, pp. 1403--1411. B. Taskar, S. Lacoste Julien, and M. Jordan, “Structured prediction, dual extragradient and Bregman projections,” J. Machine Learning Research, vol. 7, pp. 1627-1653, Dec. 2006."
-        }
+        },
+        "id": 25
     },
     {
         "name": "Michalis Vazirgiannis",
@@ -348,7 +374,8 @@
             "accolades": "Marie Curie Intra European Fellowship (2006–8) hosted at INRIA Paris \"Rhino-Bird International Academic Expert Award\" in recognition of his academic/professional work @ Tencent (2017) – details here Distinguished paper award – IJCAI 2018 ( https://www.ijcai-18.org/distinguished-papers/index.html ) His D-core metric measuring jointly authority and collaborativeness has been adopted the Aminer (a main Chinese scientific portal). See an example here . (click “ D-core”). \"GNNs and Graph generative models for biomedical applications\", Keynote speaker in WEBCONF2023 , Texas USA, May 2023",
             "publications": "",
             "research": "“Path neural networks: Expressive and accurate graph neural networks”, G Michel, G Nikolentzos, JF Lutzeyer, M Vazirgiannis, International Conference on Machine Learning, 24737-24755, 2023. “FrugalScore: Learning Cheaper, Lighter and Faster Evaluation Metrics for Automatic Text Generation”, Moussa Kamal Eddine1, Guokan Shang2*, Antoine J.-P. Tixier1*, Michalis Vazirgiannis, ACL (1) 2022: 1305-1318 “BARThez: a Skilled Pretrained French Sequence-to-Sequence Model”. EMNLP (1) 2021: 9369-9390 “GraKeL: A Graph Kernel Library in Python”, Giannis Siglidis, Giannis Nikolentzos, Stratis Limnios, Christos Giatsidis, Konstantinos Skianis, Michalis Vazirgiannis; JMLR 21(54):1−5, 2020. “Synthetic electronic health records generated with variational graph autoencoders”, G Nikolentzos, M Vazirgiannis, C Xypolopoulos, M Lingman, EG Brandt, Nature - Digital Medicine 6 (1), 83, 2023 “A Degeneracy Framework for Graph Similarity\", G Nikolentzos, P Meladianos, S Limnios, M Vazirgiannis, 2595-2601, IJCAI 2018 (best paper award)"
-        }
+        },
+        "id": 26
     },
     {
         "name": "Kun Zhang",
@@ -361,7 +388,8 @@
             "accolades": "Co-authored a best paper finalist paper at CVPR 2019. Co-authored best student paper at UAI 2010. Best benchmark award of the causality challenge 2008. Test of Time Award Honorable Mention at ICML 2022 Best Paper Award of the workshop on New Frontiers in Adversarial Machine Learning (AdvML 2022) at ICML 2022 General and program chair of the 1st Conference on Causal Learning and Reasoning (CleaR 2022) Program chair of the 38th Conference on Uncertainty in Artificial Intelligence (UAI 2022)",
             "publications": "Publication Kun Zhang",
             "research": "Zhang co-authored a best student paper at UAI 2010, received the best benchmark award of the causality challenge 2008, and co-authored a best paper finalist paper at CVPR 2019. Biwei Huang, Fan Feng, Chaochao Lu, Sara Magliacane, Kun Zhang, “AdaRL: What, Where, and How to Adapt in Transfer Reinforcement Learning,” International Conference on Learning Representations (ICLR) 2022 (spotlight). Weiran Yao, Yuewen Sun, Alex Ho, Changyin Sun, Kun Zhang, “Learning Temporally Latent Causal Processes from General Temporal Data,” International Conference on Learning Representations (ICLR) 2022. Petar Stojanov, Zijian Li, Mingming Gong, Ruichu Cai, Jaime G. Carbonell, Kun Zhang, “Domain Adaptation with Invariant Representation Learning: What Transformations to Learn?” Neural Information Processing Systems (NeurIPS) 2021. Jeffrey Adams, Niels Richard Hansen, Kun Zhang, “Identification of Partially Observed Linear Causal Models: Graphical Conditions for the Non-Gaussian and Heterogeneous Cases,” Conference on Neural Information Processing Systems (NeurIPS) 2021. K. Zhang*, M. Gong*, P. Stojanov, B. Huang, Qingsong Liu, and C. Glymour, “Domain Adaptation as a Problem of Inference on Graphical Models,” Conference on Neural Information Processing Systems (NeurIPS) 2020. Feng Xie, Ruichu Cai, Biwei Huang, Clark Glymour, Zhifeng Hao, Kun Zhang, “Generalized Independent Noise Condition for Estimating Linear Non-Gaussian Latent Variable Causal Graphs,” Conference on Neural Information Processing Systems (NeurIPS) 2020 (spotlight)."
-        }
+        },
+        "id": 27
     },
     {
         "name": "Nils Lukas",
@@ -374,7 +402,8 @@
             "accolades": "Mathematics Doctoral Prize’s Top Honor, 2024. Governor’s General Gold Medal Finalist in Canada, 2024. Distinguished contribution award at Microsoft MLADS, 2023. Spotlight Award, ICLR 2021.",
             "publications": "",
             "research": "Nils Lukas, Abdulrahman Diaa, Lucas Fenaux, Florian Kerschbaum: “Leveraging Optimization for Adaptive Attacks on Image Watermarks”, ICLR 2024, The Twelfth International Conference on Learning Representations. Benjamin Schneider, Nils Lukas, Florian Kerschbaum: “Universal Backdoor Attacks”, ICLR 2024, The Twelfth International Conference on Learning Representations. Nils Lukas, Ahmed Salem, Robert Sim, Shruti Tople, Lukas Wutschitz, Santiago Zanella-Béguelin: “Analyzing Leakage of Personally Identifiable Information in Language Models”, IEEE S&P 2023, The 2023 Symposium on Security and Privacy. Nils Lukas and Florian Kerschbaum: “PTW: Pivotal Tuning Watermarking for Pre-Trained Image Generators”, USENIX 2023, The 33rd USENIX Security Symposium. Nils Lukas, Edward Jiang, Xinda Li, Florian Kerschbaum: “SoK: How Robust is Image Classification Deep Neural Network Watermarking?”, IEEE S&P 2022, The 2022 Symposium on Security and Privacy. Nils Lukas, Yuxuan Zhang, Florian Kerschbaum: “Deep Neural Network Fingerprinting by Conferrable Adversarial Examples”, ICLR 2021, The Ninth International Conference on Learning Representations."
-        }
+        },
+        "id": 28
     },
     {
         "name": "Fakhreddine (Fakhri) Karray",
@@ -387,6 +416,7 @@
             "accolades": "Fellow, the IEEE Fellow, Canadian Engineering Institute Fellow, Canadian Academy of Engineering Fellow, Kavli Frontiers of Science The 2022 IEEE Communication Society’s International Mediterranean Conference on Communications and Networking Best Paper Award, Sept. 2022 The 2021 IEEE Vehicular Technology Society (VTS) Land Transportation Best Paper Award, September 2021 Best Paper Award, 18th IEEE International Conference on Cognitive Informatics and Cognitive Computing, Milan, Italy, 2019 The 2014 Pattern Recognition Best Paper Award for best article published in the Journal Pattern Recognition, awarded in August 2014 Keynote Speaker at the 3rd International Conference on Machine Learning for Networking (MLN'2020), Paris, France, Nov. 24 -26, 2020 The University of Waterloo’s Faculty of Engineering Distinguished Performance Award, 2019",
             "publications": "Publication Fakhri Karray",
             "research": "Fakhri has published extensively in the general field of pattern analysis and machine intelligence and is the author of 20 US registered patents.\r\nartificial, biological, and social systems. Soft Computing and Intelligent Systems Design (Addison Wesley Publishing, 2004). Elements of Dimensionality Reduction and Manifold Learning (Springer, Publication date: 2022). G Muhammad, F Alshehri, F Karray, A El Saddik, M Al Sulaiman, TH Falk, “A comprehensive Survey on Multimodal Medical Signals Fusion for Smart Healthcare Systems,” Information Fusion, 76, pp. 355-375, 2021. C Ou and F Karray, “Enhancing Driver Distraction Recognition Using Generative Adversarial Networks,” IEEE Transactions on Intelligent Vehicles (3), 385-396, 2019."
-        }
+        },
+        "id": 29
     }
 ]

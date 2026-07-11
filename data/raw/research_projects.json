@@ -4,118 +4,135 @@
         "Summary": "MBZUAI’s Institute of Foundation Models (IFM) is committed to developing open, efficient artificial intelligence (AI) foundation models, designed to tackle a wide range of real-world challenges.",
         "Owner": "",
         "Category": "IFM",
-        "Description": "MBZUAI’s Institute of Foundation Models (IFM) is committed to developing open, efficient artificial intelligence (AI) foundation models, designed to tackle a wide range of real-world challenges. Among the many accessible offerings are models like K2 Think and Jais. Check out theIFM websitefor more information."
+        "Description": "MBZUAI’s Institute of Foundation Models (IFM) is committed to developing open, efficient artificial intelligence (AI) foundation models, designed to tackle a wide range of real-world challenges. Among the many accessible offerings are models like K2 Think and Jais. Check out theIFM websitefor more information.",
+        "id": 100
     },
     {
         "Title": "The Spoken Emirati Documentation Project",
         "Summary": "This project aims to archive, analyze, and utilize spoken Emirati data for cultural and technological projects. One main aim is to collect large samples of spoken Emirati data from the ground up.",
         "Owner": "Dr. Hanan Aldarmaki",
         "Category": "AI & Society",
-        "Description": "This project aims to archive, analyze, and utilize spoken Emirati data for cultural and technological projects.\nOne main aim is to collect large samples of spoken Emirati data from the ground up, covering various regions and age groups in the UAE. The collected data will be annotated and used for developing linguistic resources, documenting the richness of the spoken Emirati dialect and archiving it for future generations.\nThe project also aims to use the data to train large spoken language models that can be integrated with various AI technologies, such as virtual assistants, automatic translation, and digital accessibility."
+        "Description": "This project aims to archive, analyze, and utilize spoken Emirati data for cultural and technological projects.\nOne main aim is to collect large samples of spoken Emirati data from the ground up, covering various regions and age groups in the UAE. The collected data will be annotated and used for developing linguistic resources, documenting the richness of the spoken Emirati dialect and archiving it for future generations.\nThe project also aims to use the data to train large spoken language models that can be integrated with various AI technologies, such as virtual assistants, automatic translation, and digital accessibility.",
+        "id": 101
     },
     {
         "Title": "AI for Cybersecurity (CyberAI)",
         "Summary": "The CyberAI project will advance the field of cybersecurity through the integration of AI focusing on Security of Modern Sustainable Cognitive Cities, Modern Sustainable Connected Buildings, Security of B5G Networks, and Security of Autonomous Mobility Systems. The project aim is to develop innovative solutions that enhance the resilience and protection of smart cities critical infrastructures against evolving cyber threats.",
         "Owner": "Prof. Mohsen Guizani",
         "Category": "Cybersecurity & Infrastructure",
-        "Description": "TheCyberAIproject will advance the field of cybersecurity through the integration of AI focusing on Security of Modern Sustainable Cognitive Cities, Modern Sustainable Connected Buildings, Security of B5G Networks, and Security of Autonomous Mobility Systems. The project's aim is to develop innovative solutions that enhance the resilience and protection of smart cities' critical infrastructures against evolving cyber threats."
+        "Description": "TheCyberAIproject will advance the field of cybersecurity through the integration of AI focusing on Security of Modern Sustainable Cognitive Cities, Modern Sustainable Connected Buildings, Security of B5G Networks, and Security of Autonomous Mobility Systems. The project's aim is to develop innovative solutions that enhance the resilience and protection of smart cities' critical infrastructures against evolving cyber threats.",
+        "id": 102
     },
     {
         "Title": "AgroCast-GPT: Artificial Intelligence-Based Yield Forecasting and Recommendation Platform",
         "Summary": "The AgroCast-GPT Project is a joint initiative between MBZUAI and Silal to harness AI for smart agriculture. The project develops a generative AI-powered platform that integrates greenhouse sensor data, crop imagery, and environmental parameters to deliver accurate yield forecasts for key UAE crops such as tomatoes and cucumbers. By combining advanced machine learning with localized agricultural data, AgroCast-GPT provides actionable recommendations for farm management, resource optimization, and supply chain planning, helping improve productivity, reduce costs, and support the UAE’s food security and sustainability goals.",
         "Owner": "",
         "Category": "Climate, Environment & Energy",
-        "Description": "The AgroCast-GPT Project is a joint initiative betweenMBZUAIandSilalto harness AI for smart agriculture. The project develops a generative AI-powered platform that integrates greenhouse sensor data, crop imagery, and environmental parameters to deliver accurate yield forecasts for key UAE crops such as tomatoes and cucumbers.\nBy combining advanced machine learning with localized agricultural data,AgroCast-GPTprovides actionable recommendations for farm management, resource optimization, and supply chain planning, helping improve productivity, reduce costs, and support the UAE’s food security and sustainability goals."
+        "Description": "The AgroCast-GPT Project is a joint initiative betweenMBZUAIandSilalto harness AI for smart agriculture. The project develops a generative AI-powered platform that integrates greenhouse sensor data, crop imagery, and environmental parameters to deliver accurate yield forecasts for key UAE crops such as tomatoes and cucumbers.\nBy combining advanced machine learning with localized agricultural data,AgroCast-GPTprovides actionable recommendations for farm management, resource optimization, and supply chain planning, helping improve productivity, reduce costs, and support the UAE’s food security and sustainability goals.",
+        "id": 103
     },
     {
         "Title": "Advancing the discipline of weather-informed malaria prediction and planning",
         "Summary": "Climate change is already impacting human health and will continue to have a disproportionate effect on the world’s most vulnerable. The main objective of this project is set-up a virtual center of excellence anchored in Abu Dhabi to advance the discipline of weather-informed malaria prediction and planning utilizing big data and AI. This will also involve the development of learning and risk models for climate-based risk stratification and the development of AI-powered models to process weather and human movement data to improve the prediction and forecasting of Malaria outbreaks",
         "Owner": "Prof. Mohammad Yaqub",
         "Category": "Healthcare & Life Sciences",
-        "Description": "Climate change is already impacting human health and will continue to have a disproportionate effect on the world’s most vulnerable. The main objective of this project is to set-up a virtual center of excellence anchored in Abu Dhabi to advance the discipline of weather-informed malaria prediction and planning utilizing big data and AI. This will also involve the development of learning and risk models for climate-based risk stratification and the development ofAI-poweredmodels to process weather and human movement data to improve the prediction and forecasting of malaria outbreaks."
+        "Description": "Climate change is already impacting human health and will continue to have a disproportionate effect on the world’s most vulnerable. The main objective of this project is to set-up a virtual center of excellence anchored in Abu Dhabi to advance the discipline of weather-informed malaria prediction and planning utilizing big data and AI. This will also involve the development of learning and risk models for climate-based risk stratification and the development ofAI-poweredmodels to process weather and human movement data to improve the prediction and forecasting of malaria outbreaks.",
+        "id": 104
     },
     {
         "Title": "Identification of clouds microphysical seedability in an actionable manner (Rain Enhancement Project)",
         "Summary": "The Rain Enhancement Project focuses on advancing scientific understanding and operational capabilities for cloud seeding in the UAE.",
         "Owner": "Associate Prof. Salman Khan",
         "Category": "Climate, Environment & Energy",
-        "Description": "The Rain Enhancement Project focuses on advancing scientific understanding and operational capabilities for cloud seeding in the UAE.\nThe project develops machine learning andcomputer vision-basedtools to diagnose the seedability of clouds—i.e., their potential to generate enhanced rainfall when seeded—using real-time satellite, radar, and meteorological data.\nBy combining high-fidelity cloud simulations, advanced remote sensing, andAI-driven predictive models, the project aims to identify and target the most promising clouds for seeding, thereby improving water security in arid regions. This collaborative effort brings together leading international experts in atmospheric science, remote sensing, and artificial intelligence."
+        "Description": "The Rain Enhancement Project focuses on advancing scientific understanding and operational capabilities for cloud seeding in the UAE.\nThe project develops machine learning andcomputer vision-basedtools to diagnose the seedability of clouds—i.e., their potential to generate enhanced rainfall when seeded—using real-time satellite, radar, and meteorological data.\nBy combining high-fidelity cloud simulations, advanced remote sensing, andAI-driven predictive models, the project aims to identify and target the most promising clouds for seeding, thereby improving water security in arid regions. This collaborative effort brings together leading international experts in atmospheric science, remote sensing, and artificial intelligence.",
+        "id": 105
     },
     {
         "Title": "AI-Driven Affordable, Accessible and Sustainable Fetal Health using Point of Care Ultrasound",
         "Summary": "This study aims to investigate and develop solutions that could help make fetal healthcare more affordable, accessible and sustainable using Artificial Intelligence (AI) and Point of Care Ultrasound (PoCUS). The project will result in the development of innovative solutions to make the assessment of fetal health more affordable, accessible and sustainable using AI and PoCUS scanners.",
         "Owner": "Associate Professor Mohammad Yaqub",
         "Category": "Healthcare & Life Sciences",
-        "Description": "This study aims to investigate and develop solutions that could help make fetal healthcare more affordable, accessible and sustainable using Artificial Intelligence (AI) and Point of Care Ultrasound (PoCUS). The project will result in the development of innovative solutions to make the assessment of fetal health more affordable, accessible and sustainable using AI and PoCUS scanners."
+        "Description": "This study aims to investigate and develop solutions that could help make fetal healthcare more affordable, accessible and sustainable using Artificial Intelligence (AI) and Point of Care Ultrasound (PoCUS). The project will result in the development of innovative solutions to make the assessment of fetal health more affordable, accessible and sustainable using AI and PoCUS scanners.",
+        "id": 106
     },
     {
         "Title": "Democratizing Access to High-quality, Farmer-centered AI-based Forecasts",
         "Summary": "This project aims to scale cost-effective innovations to improve the livelihoods of farmers in low- and middle-income countries by generating and disseminating high-quality weather forecasts to meet the needs of hundreds of millions of farmers globally.",
         "Owner": "Associate Prof. Souhaib Ben Taieb",
         "Category": "Climate, Environment & Energy",
-        "Description": "This project aims to scale cost-effective innovations to improve the livelihoods of farmers in low- and middle-income countries by generating and disseminating high-quality weather forecasts to meet the needs of hundreds of millions of farmers globally. Outcomes of this project will revolutionize decision-making on the ground, boosting climate resilience and advancing sustainable agriculture.\n‍"
+        "Description": "This project aims to scale cost-effective innovations to improve the livelihoods of farmers in low- and middle-income countries by generating and disseminating high-quality weather forecasts to meet the needs of hundreds of millions of farmers globally. Outcomes of this project will revolutionize decision-making on the ground, boosting climate resilience and advancing sustainable agriculture.\n‍",
+        "id": 107
     },
     {
         "Title": "Devising models for predicting disease onset and identifying biological markers in large-scale and multi-layered cohorts",
         "Summary": "The main goal of this project is to recruit 10,000 healthy individuals, deeply phenotype them, and follow them for several years, creating a large-scale prospective longitudinal cohort and biobank.",
         "Owner": "Prof. Eran Segal, Prof. Le Song and Prof. Eric Xing",
         "Category": "Healthcare & Life Sciences",
-        "Description": "The main goal of this project is to recruit 10,000 healthy individuals, deeply phenotype them, and follow them for several years, creating a large-scale prospective longitudinal cohort and biobank. The phenotyped data will be used to research and develop prediction models for disease onset and progression and identification of novel molecular markers with a diagnostic, prognostic and therapeutic value.\n\nPublications:\nDeep phenotyping of health–disease continuum in the Human Phenotype Project.Nat Med(2025).https://doi.org/10.1038/s41591-025-03790-9\n‍\n‍"
+        "Description": "The main goal of this project is to recruit 10,000 healthy individuals, deeply phenotype them, and follow them for several years, creating a large-scale prospective longitudinal cohort and biobank. The phenotyped data will be used to research and develop prediction models for disease onset and progression and identification of novel molecular markers with a diagnostic, prognostic and therapeutic value.\n\nPublications:\nDeep phenotyping of health–disease continuum in the Human Phenotype Project.Nat Med(2025).https://doi.org/10.1038/s41591-025-03790-9\n‍\n‍",
+        "id": 108
     },
     {
         "Title": "Live Imaging and Lineage Tracing of Mouse Embryo Development ex-utero",
         "Summary": "This research is aimed at developing a system which allows us to continuously and robustly capture the developing mouse embryo during two thirds of pregnancy.",
         "Owner": "Dr. Hisham Cholakkal, Prof. Fahad Khan, Dr. Anwer Rao, Dr. Salman Khan",
         "Category": "Healthcare & Life Sciences",
-        "Description": "This research is aimed at developing a system which allows us to continuously and robustly capture the developing mouse embryo during two-thirds of pregnancy. Using light-sheet microscopy, combined with reporter proteins, lineage-tracing techniques, and advanced AI movement-tracking algorithms, this study plans to take the longest time-lapse live imaging of a growing mammalian embryo ever taken. With this system, researchers aim to tackle basic questions of germ-layer development and characterize knockout of key developmental genes.\n‍"
+        "Description": "This research is aimed at developing a system which allows us to continuously and robustly capture the developing mouse embryo during two-thirds of pregnancy. Using light-sheet microscopy, combined with reporter proteins, lineage-tracing techniques, and advanced AI movement-tracking algorithms, this study plans to take the longest time-lapse live imaging of a growing mammalian embryo ever taken. With this system, researchers aim to tackle basic questions of germ-layer development and characterize knockout of key developmental genes.\n‍",
+        "id": 109
     },
     {
         "Title": "AI-Powered Early Warning of Extreme Climate Hazards in EMME",
         "Summary": "Early forecasting of extreme weather events is crucial for averting harmful global climate change effects, especially in the Eastern Mediterranean and Middle East (EMME region).",
         "Owner": "Dr. Salman Khan, Prof. Fahad Khan",
         "Category": "Climate, Environment & Energy",
-        "Description": "Early forecasting of extreme weather events is crucial for averting harmful global climate change effects, especially in the Eastern Mediterranean and Middle East (EMME region), one of the most vulnerable regions due to climatic changes.\nCurrent weather forecasting methods are relatively slow, less adaptive to newly emerging observed signals, and limited in leveraging vast amounts of heterogeneous climate data.\nThis project seeks to design novelmeteorology-driven AI modelsfor extreme event forecasting that are specifically adapted to these challenges, focusing on EMME's most disturbing climatic concerns.\n‍\n‍"
+        "Description": "Early forecasting of extreme weather events is crucial for averting harmful global climate change effects, especially in the Eastern Mediterranean and Middle East (EMME region), one of the most vulnerable regions due to climatic changes.\nCurrent weather forecasting methods are relatively slow, less adaptive to newly emerging observed signals, and limited in leveraging vast amounts of heterogeneous climate data.\nThis project seeks to design novelmeteorology-driven AI modelsfor extreme event forecasting that are specifically adapted to these challenges, focusing on EMME's most disturbing climatic concerns.\n‍\n‍",
+        "id": 110
     },
     {
         "Title": "The MBZUAI Metaverse",
         "Summary": "The MBZUAI Metaverse is building the next generation of immersive online user experiences, digital content generation and spatial computing technologies. It is currently developing open and AI-driven metaverse technologies to enhance people with accessible and meaningful digital content for improved capabilities and lifelong learning.",
         "Owner": "Prof. Hao Li",
         "Category": "AI & Society",
-        "Description": "TheMBZUAI Metaverseis building the next generation of immersive online user experiences, digital content generation and spatial computing technologies. It is currently developing open and AI-driven metaverse technologies to enhance people with accessible and meaningful digital content for improved capabilities and lifelong learning."
+        "Description": "TheMBZUAI Metaverseis building the next generation of immersive online user experiences, digital content generation and spatial computing technologies. It is currently developing open and AI-driven metaverse technologies to enhance people with accessible and meaningful digital content for improved capabilities and lifelong learning.",
+        "id": 111
     },
     {
         "Title": "MBZUAI Universe",
         "Summary": "MBZUAI Universe is your AI-powered assistant designed to simplify access to MBZUAI’s academic and research expertise. This intelligent chatbot helps you explore faculty research, innovation projects, industry collaborations, and more — instantly.",
         "Owner": "",
         "Category": "AI & Society",
-        "Description": "MBZUAI Universeis your AI-powered assistant designed to simplify access to MBZUAI’s academic and research expertise. This intelligent chatbot helps you explore faculty research, innovation projects, industry collaborations, and more — instantly.\n‍"
+        "Description": "MBZUAI Universeis your AI-powered assistant designed to simplify access to MBZUAI’s academic and research expertise. This intelligent chatbot helps you explore faculty research, innovation projects, industry collaborations, and more — instantly.\n‍",
+        "id": 112
     },
     {
         "Title": "Rampart",
         "Summary": "A comprehensive suite of solutions built on Kubernetes architecture and aligned with industry best practices. It addresses key areas of the end-to-end lifecycle of AI from development, production to operation stages.",
         "Owner": "Prof. Qirong Ho",
         "Category": "Cybersecurity & Infrastructure",
-        "Description": "A comprehensive suite of solutions built on Kubernetes architecture and aligned with industry best practices. It addresses key areas of the end-to-end lifecycle of AI from development, production to operation stages."
+        "Description": "A comprehensive suite of solutions built on Kubernetes architecture and aligned with industry best practices. It addresses key areas of the end-to-end lifecycle of AI from development, production to operation stages.",
+        "id": 113
     },
     {
         "Title": "Arabic dialectic LLM in collaboration with IBM",
         "Summary": "Build and demonstrate the first and best dialectic Arabic LLM with region-relevant Multilingual QA and Writing Assistant applications‍",
         "Owner": "Prof. Timothy Baldwin and Prof. Preslav Nakov",
         "Category": "AI & Society",
-        "Description": "Build and demonstrate the first and best dialectic Arabic LLM with region-relevant Multilingual QA and Writing Assistant applications."
+        "Description": "Build and demonstrate the first and best dialectic Arabic LLM with region-relevant Multilingual QA and Writing Assistant applications.",
+        "id": 114
     },
     {
         "Title": "Heat Island Detection and Mitigation in collaboration with IBM",
         "Summary": "Build AI-enabled Urban Heat Island detection and mitigation technology of highest relevance to the region around COP activity",
         "Owner": "Dr. Salman Khan and Prof. Fahad Khan",
         "Category": "Climate, Environment & Energy",
-        "Description": "Build AI-enabled Urban Heat Island detection and mitigation technology of highest relevance to the region around COP activity."
+        "Description": "Build AI-enabled Urban Heat Island detection and mitigation technology of highest relevance to the region around COP activity.",
+        "id": 115
     },
     {
         "Title": "The Human Phenotype Project",
         "Summary": "The HPP combines innovative medical tests and advanced artificial intelligence to identify your unique health status. Using this information expert scientists at MBZUAI will be able to predict future medical conditions, even before they break out.",
         "Owner": "Prof. Eran Segal",
         "Category": "Healthcare & Life Sciences",
-        "Description": "The HPP combines innovative medical tests and advanced artificial intelligence to identify your unique health status. Using this information expert scientists at MBZUAI will be able to predict future medical conditions, even before they break out."
+        "Description": "The HPP combines innovative medical tests and advanced artificial intelligence to identify your unique health status. Using this information expert scientists at MBZUAI will be able to predict future medical conditions, even before they break out.",
+        "id": 116
     }
 ]
