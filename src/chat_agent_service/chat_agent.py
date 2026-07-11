@@ -33,12 +33,17 @@ llm = ChatOpenAI(
 #     temperature=0
 # )
 
-# Define the  threshold for confidence
-CONFIDENCE_THRESHOLD = 0.6
+# Define the confidence threshold for confidence (configurable via environment or runtime)
+# Default value, can be overridden at runtime
+CONFIDENCE_THRESHOLD = float(os.environ.get("CONFIDENCE_THRESHOLD", "0.6"))
+
+# Ablation study configuration flags (configurable at runtime)
+USE_HISTORICAL_CONTEXT = True  # Whether to use historical questions as context
 
 # --- Define the Agent State ---
 class AgentState(TypedDict):
     query: str
+    original_query: str  # Store the original query before rewriting
     retrieved_docs: List[Dict[str, Any]]
     scores: Dict[str, Any]
     is_off_topic: bool
@@ -48,12 +53,125 @@ class AgentState(TypedDict):
     suggested_questions: List[str]
     final_answer: str
     extracted_answer: Optional[str]
+    chat_history: List[Dict[str, str]]  # List of {"role": "user"/"assistant", "content": "..."}
+    use_historical_context: bool  # Flag to enable/disable historical context
+    confidence_threshold: float   # Per-session confidence threshold
+    rewritten_query: Optional[str]  # Stores the rewritten query if historical context was used
+    query_was_rewritten: bool     # Flag indicating if query rewriting occurred
+    historical_queries: List[str]  # List of previous user queries only (for ablation study)
 
 # --- Node Functions (The Steps) ---
+
+def rewrite_query_with_context(state: AgentState):
+    """Rewrites the current query using historical queries if USE_HISTORICAL_CONTEXT is enabled.
+    
+    This function resolves ambiguous references (e.g., pronouns like "he", "it", "they") 
+    by incorporating context from previous user queries only. The immediate query is treated as 
+    high priority, with historical context used only for disambiguation.
+    
+    If USE_HISTORICAL_CONTEXT is False, no rewriting occurs and the original query is used.
+    """
+    query = state["query"]
+    chat_history = state.get("chat_history", [])
+    use_historical_context = state.get("use_historical_context", USE_HISTORICAL_CONTEXT)
+    
+    # Store original query
+    original_query = query
+    
+    # If historical context is disabled or no chat history, skip rewriting
+    if not use_historical_context or not chat_history:
+        return {
+            "original_query": original_query,
+            "rewritten_query": None,
+            "query_was_rewritten": False,
+            "historical_queries": []
+        }
+    
+    # Extract only user queries from history (last 5 for context)
+    historical_queries = []
+    for msg in chat_history[-5:]:
+        if msg["role"] == "user":
+            historical_queries.append(msg["content"])
+    
+    # If no previous user queries, skip rewriting
+    if not historical_queries:
+        return {
+            "original_query": original_query,
+            "rewritten_query": None,
+            "query_was_rewritten": False,
+            "historical_queries": []
+        }
+    
+    # Build historical context string from user queries only
+    history_context = "\n".join([f"Q{i+1}: {q}" for i, q in enumerate(historical_queries)])
+    
+    # Prompt to rewrite the query with context resolution
+    rewrite_prompt = ChatPromptTemplate.from_template(
+        "You are a query rewriting assistant. Your task is to rewrite the current user query "
+        "by resolving any ambiguous references using the conversation history.\n\n"
+        "**Important Guidelines:**\n"
+        "1. The CURRENT query is the HIGHEST PRIORITY - do not change its intent or focus.\n"
+        "2. Only add context from history if the current query contains ambiguous references "
+        "   (pronouns like 'he', 'she', 'it', 'they', 'this', 'that', or incomplete references).\n"
+        "3. If the current query is already complete and clear, return it unchanged.\n"
+        "4. Keep the rewritten query concise and natural.\n"
+        "5. Do NOT add unnecessary historical information if not needed.\n\n"
+        "Conversation History (User Queries Only):\n"
+        "{history_context}\n\n"
+        "Current Query: {query}\n\n"
+        "Respond ONLY with the rewritten query (or the original query if no changes needed). "
+        "Do not include any explanations or additional text.\n\n"
+        "Examples:\n"
+        "History: Q1: What is Le Song's research area?\n"
+        "         Q2: Tell me about his publications\n"
+        "Current: What about his students?\n"
+        "Rewritten: What are Le Song's students?\n\n"
+        "History: Q1: What are the ML projects at MBZUAI?\n"
+        "Current: Who leads the climate AI project?\n"
+        "Rewritten: Who leads the climate AI project? (unchanged - already clear)\n\n"
+        "Now rewrite this query:\n"
+        "History:\n{history_context}\n"
+        "Current Query: {query}\n"
+        "Rewritten Query:"
+    )
+    
+    try:
+        chain = rewrite_prompt | llm
+        response = chain.invoke({
+            "history_context": history_context,
+            "query": query
+        })
+        
+        rewritten_query = response.content.strip()
+        
+        # Check if the query actually changed
+        query_was_rewritten = rewritten_query.lower() != query.lower()
+        
+        # If no meaningful change, treat as not rewritten
+        if len(rewritten_query) < len(query) * 0.8 or len(rewritten_query) > len(query) * 1.5:
+            # Significant length difference might indicate a problem, use original
+            rewritten_query = query
+            query_was_rewritten = False
+            
+    except Exception as e:
+        print(f"⚠️ Error rewriting query: {e}")
+        rewritten_query = query
+        query_was_rewritten = False
+    
+    return {
+        "original_query": original_query,
+        "rewritten_query": rewritten_query if query_was_rewritten else None,
+        "query_was_rewritten": query_was_rewritten,
+        "historical_queries": historical_queries,
+        "query": rewritten_query  # Update the query field for downstream nodes
+    }
+
 
 def check_off_topic(state: AgentState):
     """Checks if the query is related to MBZUAI/Academic topics using the SMALL model."""
     query = state["query"]
+    original_query = state.get("original_query", query)
+    
     prompt = ChatPromptTemplate.from_template(
         "You are a strict classifier. Determine if the user query is related to MBZUAI, "
         "artificial intelligence, computer science, research projects, or academic topics.\n"
@@ -98,9 +216,22 @@ def evaluate_confidence(state: AgentState):
     """Uses LLM to evaluate context confidence and attempts to extract the answer."""
     query = state["query"]
     docs = state["retrieved_docs"]
+    chat_history = state.get("chat_history", [])
+    use_historical_context = state.get("use_historical_context", USE_HISTORICAL_CONTEXT)
     
     # Combine top 10 chunks for context
     context_text = "\n\n".join([doc.get("enriched_text", "") for doc in docs[:10]])
+    
+    # Build historical context if enabled and available
+    historical_context = ""
+    if use_historical_context and chat_history:
+        # Format chat history for context (only user questions for brevity)
+        history_items = []
+        for msg in chat_history[-5:]:  # Last 5 messages for context
+            if msg["role"] == "user":
+                history_items.append(f"Previous question: {msg['content']}")
+        if history_items:
+            historical_context = "\n".join(history_items) + "\n\n"
     
     prompt = ChatPromptTemplate.from_template(
         "You are an expert evaluator. Given a user query and a set of retrieved documents, determine how well the "
@@ -111,12 +242,17 @@ def evaluate_confidence(state: AgentState):
         "  \"reason\": \"<Briefly explain why you assigned this confidence score>\",\n"
         "  \"answer\": \"<If confidence >= 0.6, provide the extracted answer here. If confidence < 0.6 or context lacks the answer, set this to null>\"\n"
         "}}\n\n"
+        "{historical_context}"
         "Query: {query}\n\n"
         "Retrieved Documents:\n{context}\n\n"
         "JSON Response:"
     )
     chain = prompt | llm
-    response = chain.invoke({"query": query, "context": context_text})
+    response = chain.invoke({
+        "historical_context": historical_context,
+        "query": query, 
+        "context": context_text
+    })
     
     # Set defaults
     confidence = 0.0
@@ -148,12 +284,16 @@ def evaluate_confidence(state: AgentState):
         reason = "Failed to parse LLM evaluation response."
         
     suggested = []
+    # Get the threshold from state or use default
+    threshold = state.get("confidence_threshold", CONFIDENCE_THRESHOLD)
+    
     # If confidence is below the threshold, generate suggested questions
-    if confidence < CONFIDENCE_THRESHOLD:
+    if confidence < threshold:
         suggest_prompt = ChatPromptTemplate.from_template(
             "The user asked a question, but the provided context doesn't fully answer it (Confidence is low). "
             "Suggest 3 alternative or follow-up questions that are closely related to the user's original question, "
             "but CAN be answered using the provided context.\n\n"
+            "{historical_context}"
             "Original User Question: {query}\n\n"
             "Retrieved Context:\n{context}\n\n"
             "Instructions:\n"
@@ -174,7 +314,11 @@ def evaluate_confidence(state: AgentState):
             "JSON Output:"
         )
         suggest_chain = suggest_prompt | llm
-        suggest_response = suggest_chain.invoke({"query": query, "context": context_text})
+        suggest_response = suggest_chain.invoke({
+            "historical_context": historical_context,
+            "query": query, 
+            "context": context_text
+        })
         try:
             clean_json = suggest_response.content.strip().strip('```json').strip('```').strip()
             suggested = json.loads(clean_json)
@@ -262,6 +406,7 @@ def route_after_confidence(state):
 workflow = StateGraph(AgentState)
 
 # 1. Add Nodes
+workflow.add_node("rewrite_query_with_context", rewrite_query_with_context)
 workflow.add_node("check_off_topic", check_off_topic)
 workflow.add_node("hybrid_retrieval", hybrid_retrieval)
 workflow.add_node("check_relevance", check_relevance)
@@ -271,10 +416,11 @@ workflow.add_node("return_abstain", return_abstain)
 workflow.add_node("return_generic_questions", return_generic_questions)
 workflow.add_node("return_off_topic", return_off_topic)
 
-# 2. Set Entry Point
-workflow.set_entry_point("check_off_topic")
+# 2. Set Entry Point - First rewrite query with context, then proceed
+workflow.set_entry_point("rewrite_query_with_context")
 
 # 3. Add Edges
+workflow.add_edge("rewrite_query_with_context", "check_off_topic")
 workflow.add_conditional_edges("check_off_topic", route_after_off_topic, {
     "hybrid_retrieval": "hybrid_retrieval", "return_off_topic": "return_off_topic"
 })
@@ -293,14 +439,37 @@ workflow.add_edge("return_off_topic", END)
 
 agent_graph = workflow.compile()
 
-def run_agent(query: str):
-    """Entry point for the Streamlit app to run the agent."""
+def run_agent(query: str, chat_history: Optional[List[Dict[str, str]]] = None, 
+              use_historical_context: bool = True, confidence_threshold: float = 0.6):
+    """Entry point for the Streamlit app to run the agent.
+    
+    Args:
+        query: The user's current question
+        chat_history: List of previous messages [{"role": "user"/"assistant", "content": "..."}]
+        use_historical_context: Whether to use historical questions as context (for ablation study)
+        confidence_threshold: The threshold for confidence score (configurable per session)
+    
+    Returns:
+        Dictionary containing the final state with all intermediate results for analysis
+    """
     initial_state = {
-        "query": query, "retrieved_docs": [], "scores": {},
-        "is_off_topic": False, "is_relevant": False, 
-        "confidence_score": 0.0, "reason": "",
-        "suggested_questions": [], "final_answer": "",
-        "extracted_answer": None
+        "query": query, 
+        "original_query": query,  # Will be updated by rewrite node
+        "retrieved_docs": [], 
+        "scores": {},
+        "is_off_topic": False, 
+        "is_relevant": False, 
+        "confidence_score": 0.0, 
+        "reason": "",
+        "suggested_questions": [], 
+        "final_answer": "",
+        "extracted_answer": None,
+        "chat_history": chat_history or [],
+        "use_historical_context": use_historical_context,
+        "confidence_threshold": confidence_threshold,
+        "rewritten_query": None,
+        "query_was_rewritten": False,
+        "historical_queries": []
     }
     final_state = agent_graph.invoke(initial_state)
     return final_state

@@ -26,10 +26,30 @@ if "metrics" not in st.session_state:
         "confidence_scores": []  # Tracks confidence scores for evaluated queries
     }
 
-# Sidebar for session management
+# Sidebar for session management and configuration
 with st.sidebar:
     st.header("⚙️ Session Controls")
     st.caption("Track your session analytics and clear history.")
+    
+    # Ablation Study Configuration
+    st.subheader("🔬 Ablation Study Settings")
+    use_historical_context = st.toggle(
+        "Use Historical Context",
+        value=True,
+        help="When enabled, previous questions in the conversation are used as context for answering. Disable for ablation study."
+    )
+    
+    confidence_threshold = st.slider(
+        "Confidence Threshold",
+        min_value=0.0,
+        max_value=1.0,
+        value=0.6,
+        step=0.05,
+        help="Minimum confidence score required to generate an answer. Lower values allow more answers but may reduce quality."
+    )
+    
+    st.divider()
+    
     if st.button("🗑️ Clear Chat & Metrics", use_container_width=True):
         st.session_state.messages = []
         st.session_state.metrics = {
@@ -49,6 +69,10 @@ tab1, tab2 = st.tabs(["💬 Chat Interface", "📊 Analytics & Retrieval"])
 with tab1:
     st.markdown("This agent uses **LangGraph** to orchestrate retrieval, evaluate context confidence, and resolve ambiguity.")
     
+    # Display current configuration status
+    config_status = f"**Ablation Mode:** {'Historical Context Enabled' if use_historical_context else 'Historical Context Disabled'} | **Confidence Threshold:** {confidence_threshold:.2f}"
+    st.caption(config_status)
+    
     # Display chat messages from history
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
@@ -65,8 +89,19 @@ with tab1:
         with st.chat_message("assistant"):
             with st.spinner("🤖 Agent is Searching & Evaluating..."):
                 try:
-                    # run_agent returns the full state dictionary
-                    agent_state = run_agent(prompt)
+                    # Extract chat history (only user-assistant pairs for context)
+                    chat_history = [
+                        {"role": msg["role"], "content": msg["content"]}
+                        for msg in st.session_state.messages[:-1]  # Exclude current user message
+                    ]
+                    
+                    # run_agent returns the full state dictionary with configurable parameters
+                    agent_state = run_agent(
+                        query=prompt,
+                        chat_history=chat_history,
+                        use_historical_context=use_historical_context,
+                        confidence_threshold=confidence_threshold
+                    )
                     
                     # Extract data from the new state keys
                     response = agent_state.get("final_answer", "Sorry, I couldn't process that.")
@@ -75,6 +110,15 @@ with tab1:
                     confidence_score = agent_state.get("confidence_score", 0.0)
                     reason = agent_state.get("reason", "")
                     retrieved_docs = agent_state.get("retrieved_docs", [])
+                    
+                    # Extract query rewriting information for ablation study
+                    query_was_rewritten = agent_state.get("query_was_rewritten", False)
+                    rewritten_query = agent_state.get("rewritten_query")
+                    original_query = agent_state.get("original_query", prompt)
+                    
+                    # Display query rewriting info if enabled and occurred
+                    if use_historical_context and query_was_rewritten and rewritten_query:
+                        st.info(f"🔄 **Query Rewritten:** \"{original_query}\" → \"{rewritten_query}\"")
                     
                     # Update session metrics
                     st.session_state.metrics["total_questions"] += 1
@@ -90,6 +134,9 @@ with tab1:
                     retrieved_docs = []
                     confidence_score = 0.0
                     reason = ""
+                    query_was_rewritten = False
+                    rewritten_query = None
+                    original_query = prompt
                     
             st.markdown(response)
             
@@ -99,7 +146,10 @@ with tab1:
             "content": response,
             "retrieved_docs": retrieved_docs,
             "confidence_score": confidence_score,
-            "reason": reason
+            "reason": reason,
+            "query_was_rewritten": query_was_rewritten,
+            "rewritten_query": rewritten_query,
+            "original_query": original_query
         })
 
 # ==========================================
@@ -121,8 +171,9 @@ with tab2:
     
     col4.metric("Avg Confidence", f"{avg_conf:.2f}", delta=f"Last: {last_conf:.2f}")
     
-    # Highlight the system threshold
-    st.caption("🎯 **System Threshold:** The agent requires a confidence score of **≥ 0.6** to generate a final answer. Scores below 0.6 trigger the abstention and clarification workflow.")
+    # Highlight the system threshold (dynamic based on user setting)
+    st.caption(f"🎯 **Current Threshold:** The agent requires a confidence score of **≥ {confidence_threshold:.2f}** to generate a final answer. Scores below {confidence_threshold:.2f} trigger the abstention and clarification workflow.")
+    st.caption("💡 *Note: You can adjust the confidence threshold in the sidebar for ablation studies.*")
     
     st.divider()
     st.header("🔍 Retrieved Chunks History")
@@ -142,10 +193,21 @@ with tab2:
             conf = asst_msg.get("confidence_score", 0.0)
             reason = asst_msg.get("reason", "")
             
+            # Extract query rewriting information for ablation study analysis
+            query_was_rewritten = asst_msg.get("query_was_rewritten", False)
+            rewritten_query = asst_msg.get("rewritten_query")
+            original_query = asst_msg.get("original_query", query_text)
+            
             # Expand the latest query by default, collapse older ones to save space
             is_latest = (i == len(user_msgs) - 1)
             
             with st.expander(f"Query {i+1}: {query_text}", expanded=is_latest):
+                # Display query rewriting info for ablation study
+                if use_historical_context and query_was_rewritten and rewritten_query:
+                    st.success(f"🔄 **Query Rewriting Applied:** \\n\\n**Original:** \"{original_query}\" \\n\\n**Rewritten:** \"{rewritten_query}\"")
+                elif use_historical_context and not query_was_rewritten:
+                    st.caption("ℹ️ Historical context was enabled but query rewriting was not needed (query was already clear).")
+                
                 # Display the confidence score and reasoning for this specific query
                 if conf > 0 or reason:
                     st.info(f"**Confidence Score:** `{conf:.2f}` | **Reasoning:** {reason}")
