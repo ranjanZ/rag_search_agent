@@ -149,7 +149,7 @@ if __name__ == "__main__":
             continue
         print(f"\n[{retriever_name.upper()}]")
         for idx, score in zip(data['ids'], data['scores']):
-            print(f"ID: {idx:>3} | Score: {score:.4f}")
+            print(f"Chunk ID: {idx:>3} | Score: {score:.4f}")
 
 
     # ==========================================================
@@ -166,10 +166,11 @@ if __name__ == "__main__":
         for i, (idx, score) in enumerate(zip(sem_data['ids'], sem_data['scores'])):
             chunk = sem_data['chunks'][i]
             print(f"\n--- Semantic Result {i+1} ---")
-            print(f"Chunk ID : {idx}")
-            print(f"Score    : {score:.4f} (Cosine Similarity)")
-            print(f"Metadata : {chunk['metadata']}")
-            print(f"Text     : {chunk['enriched_text'][:250]}...")
+            print(f"Chunk ID    : {chunk['chunk_id']}")
+            print(f"Document ID : {chunk['metadata'].get('document_id', 'N/A')}")
+            print(f"Score       : {score:.4f} (Cosine Similarity)")
+            print(f"Metadata    : {chunk['metadata']}")
+            print(f"Text        : {chunk['enriched_text'][:250]}...")
             print("-" * 70)
 
     # ==========================================================
@@ -186,9 +187,10 @@ if __name__ == "__main__":
         for i, (idx, score) in enumerate(zip(lex_data['ids'], lex_data['scores'])):
             chunk = lex_data['chunks'][i]
             print(f"\n--- Lexical Result {i+1} ---")
-            print(f"Chunk ID : {idx}")
-            print(f"Score    : {score:.4f}")
-            print(f"Text     : {chunk['enriched_text'][:150]}...")
+            print(f"Chunk ID    : {chunk['chunk_id']}")
+            print(f"Document ID : {chunk['metadata'].get('document_id', 'N/A')}")
+            print(f"Score       : {score:.4f}")
+            print(f"Text        : {chunk['enriched_text'][:150]}...")
             print("-" * 70)
 
     # ==========================================================
@@ -204,10 +206,8 @@ if __name__ == "__main__":
     else:
         for i, res in enumerate(results):
             print(f"\n--- Fused Result {i+1} ---")
-            print(f"Chunk ID : {res['id']}")
-            print(f"Metadata : {res['metadata']}")
-            print(f"Text     : {res['enriched_text'][:250]}...")
+            print(f"Chunk ID    : {res['chunk_id']}")
+            print(f"Document ID : {res['metadata'].get('document_id', 'N/A')}")
+            print(f"Metadata    : {res['metadata']}")
+            print(f"Text        : {res['enriched_text'][:250]}...")
             print("-" * 70)
-
-
-            

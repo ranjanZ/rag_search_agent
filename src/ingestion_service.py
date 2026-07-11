@@ -48,6 +48,9 @@ def parse_research_projects(filepath):
         projects = json.load(f)
         
     for project in projects:
+        # Extract the document ID from the JSON
+        doc_id = project.get("id")
+        
         title = clean_text(project.get("Title"))
         owner = clean_text(project.get("Owner"))
         category = clean_text(project.get("Category"))
@@ -66,6 +69,7 @@ def parse_research_projects(filepath):
                 "metadata": {
                     "source_file": filepath.name,
                     "doc_type": "research_project",
+                    "document_id": doc_id,  # Added document_id
                     "title": title,
                     "owner": owner,
                     "category": category
@@ -132,6 +136,9 @@ def parse_faculty(filepath):
         faculty_list = json.load(f)
         
     for person in faculty_list:
+        # Extract the document ID from the JSON
+        doc_id = person.get("id")
+        
         # 1. Extract core metadata using exact top-level keys
         name = clean_text(person.get("name"))
         title = clean_text(person.get("title"))
@@ -179,6 +186,7 @@ def parse_faculty(filepath):
                     "metadata": {
                         "source_file": filepath.name,
                         "doc_type": "faculty",
+                        "document_id": doc_id,  # Added document_id
                         "name": name,
                         "title": title,
                         "email": email,
@@ -196,6 +204,7 @@ def parse_faculty(filepath):
                 "metadata": {
                     "source_file": filepath.name,
                     "doc_type": "faculty",
+                    "document_id": doc_id,  # Added document_id
                     "name": name,
                     "title": title,
                     "email": email,
@@ -218,8 +227,15 @@ def parse_generic_csv(filepath):
         headers = reader.fieldnames
         
         for row in reader:
+            # Extract document ID if it exists in the CSV
+            doc_id = row.get("id")
+            
             text_parts = []
-            metadata = {"source_file": filepath.name, "doc_type": "csv_row"}
+            metadata = {
+                "source_file": filepath.name, 
+                "doc_type": "csv_row",
+                "document_id": doc_id  # Added document_id
+            }
             
             for header in headers:
                 val = clean_text(row.get(header))
@@ -250,11 +266,18 @@ def parse_generic_json(filepath):
     if isinstance(data, list):
         for item in data:
             if isinstance(item, dict):
+                # Extract document ID if it exists in the JSON
+                doc_id = item.get("id")
+                
                 text_parts = [f"{k}: {clean_text(v)}" for k, v in item.items() if clean_text(v)]
                 full_text = ". ".join(text_parts)
                 if len(full_text) < 20: continue
                 
-                metadata = {"source_file": filepath.name, "doc_type": "json_item"}
+                metadata = {
+                    "source_file": filepath.name, 
+                    "doc_type": "json_item",
+                    "document_id": doc_id  # Added document_id
+                }
                 metadata.update({k.lower().replace(" ", "_"): clean_text(v) for k, v in item.items() if clean_text(v)})
                 
                 first_val = clean_text(list(item.values())[0]) if item else ""
@@ -304,9 +327,9 @@ def load_all_data():
         elif filepath.suffix == ".csv":
             chunks = parse_generic_csv(filepath)
             
-        # Assign unique sequential IDs to all chunks
+        # Assign unique sequential IDs to all chunks as chunk_id
         for chunk in chunks:
-            chunk["id"] = chunk_id
+            chunk["chunk_id"] = chunk_id  # Changed from "id" to "chunk_id"
             chunk_id += 1
             
         all_chunks.extend(chunks)
@@ -322,9 +345,6 @@ def build_bm25_index(chunks):
     with open(BM25_INDEX_PATH, 'wb') as f:
         pickle.dump(bm25, f)
     print("✅ BM25 Index saved.")
-
-
-
 
 def build_faiss_index(chunks):
     print("Building FAISS Semantic Index...")
@@ -342,8 +362,6 @@ def build_faiss_index(chunks):
     with open(FAISS_MAPPING_PATH, 'wb') as f:
         pickle.dump(chunks, f)
     print("✅ FAISS Index saved.")
-
-
 
 def build_name_index(chunks):
     """
@@ -385,7 +403,6 @@ def build_name_index(chunks):
                         if len(word) > 1:
                             identity_words.append(word)
                     identity_words.append(clean_val)  # Extra boost for full name
-                    
                     
         # BM25 crashes if a document is completely empty, so add a dummy token if no identity is found
         if not identity_words:

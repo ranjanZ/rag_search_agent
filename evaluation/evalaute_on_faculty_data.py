@@ -35,13 +35,15 @@ def get_retrieved_ids(retriever_data):
     """
     Given the result from one retriever (semantic/lexical or fused),
     return a list of document IDs in rank order.
+    Uses the 'document_id' stored in metadata during ingestion.
     """
     if isinstance(retriever_data, dict) and "ids" in retriever_data:
-        # For semantic/lexical retriever
-        return retriever_data.get("ids", [])
+        # For semantic/lexical retriever - extract document_id from chunks
+        chunks = retriever_data.get("chunks", [])
+        return [chunk["metadata"].get("document_id") for chunk in chunks if chunk["metadata"].get("document_id") is not None]
     elif isinstance(retriever_data, list):
-        # For fused (list of result dicts)
-        return [item["id"] for item in retriever_data]
+        # For fused (list of result dicts) - extract document_id from metadata
+        return [item["metadata"].get("document_id") for item in retriever_data if item["metadata"].get("document_id") is not None]
     else:
         return []
 
