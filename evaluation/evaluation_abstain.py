@@ -19,7 +19,9 @@ from src.config import DATASET_CONFIG, DEFAULT_DATASETS
 
 def lazy_import_chat_agent():
     """Lazy import of chat agent to avoid initialization at import time."""
-    from src.chat_agent_service.chat_agent import run_agent
+    #from src.chat_agent_service.chat_agent import run_agent
+    from src.chat_agent_service.chat_multi_agent import run_agent
+
     return run_agent
 
 def load_dataset_for_evaluation(dataset_name: str, split: str = "validation",
@@ -265,7 +267,7 @@ def print_answer_quality_results(results: Dict[str, Any]):
 # 4. MAIN EXECUTION
 # ==========================================
 
-def main():
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Answer Quality Evaluation Script")
     parser.add_argument('--datasets', nargs='+', type=str, default=None)
     parser.add_argument('--split', type=str, default='validation')
@@ -274,7 +276,7 @@ def main():
     parser.add_argument('--confidence_threshold', type=float, default=0.6)
     
     # NEW: Add a flag to run the threshold sweep and plot
-    parser.add_argument('--sweep', action='store_true', 
+    parser.add_argument('--sweep', action='store_true', default=True, 
                        help='Run a threshold sweep and plot the results')
     parser.add_argument('--output', type=str, default=None)
 
@@ -302,7 +304,7 @@ def main():
         if not eval_data:
             continue
 
-        eval_data= random.sample(eval_data, 10)
+        eval_data= random.sample(eval_data, 100)
 
         if args.sweep:
             # --- SWEEP MODE ---
@@ -311,7 +313,12 @@ def main():
             
             # 1. Collect confidences ONCE (Measures time and estimates completion)
             agent_results = collect_agent_confidences(eval_data)
-            
+        
+            with open(f'data/output/{dataset_name}.json', 'w') as fout:
+                json.dump(agent_results, fout)
+
+
+
             # 2. Evaluate all thresholds instantly
             sweep_df = evaluate_threshold_sweep(agent_results, threshold_range)
             
@@ -335,5 +342,5 @@ def main():
 
     print("\n✅ Evaluation complete!")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()

@@ -225,7 +225,14 @@ def check_relevance(state: AgentState):
 
 
 def evaluate_confidence(state: AgentState):
-    """Uses LLM to evaluate context confidence and attempts to extract the answer."""
+    """Uses LLM to evaluate if context contains the answer and extract it if possible.
+    
+    This function separates two distinct concepts:
+    1. answerability_confidence: How confident we are that the context CONTAINS the answer (0-1)
+    2. answer_confidence: If answerable, how confident we are in the extracted answer (0-1)
+    
+    The routing decision uses answerability_confidence to decide whether to answer or abstain.
+    """
     query = state["query"]
     docs = state["retrieved_docs"]
     chat_history = state.get("chat_history", []) 
@@ -235,14 +242,30 @@ def evaluate_confidence(state: AgentState):
     context_text = "\n\n".join([doc.get("enriched_text", "") for doc in docs[:10]])
     
     prompt = ChatPromptTemplate.from_template(
-        "You are an expert evaluator. Given a user query and a set of retrieved documents, determine how well the "
-        "context answers the user's question. You might be able to answer the question fully or partially.\n\n"
+        "You are an expert evaluator. Given a user query and retrieved documents, determine if the context contains enough information to answer the question.\n\n"
+        "**CRITICAL**: You must distinguish between:\n"
+        "1. Whether the context CONTAINS the answer (answerability)\n"
+        "2. Whether you can provide a correct answer (only if answerable)\n\n"
         "Evaluate the context and respond ONLY with a valid JSON object in the following format:\n"
         "{{\n"
-        "  \"confidence\": <float between 0.0 and 1.0 indicating your confidence that the context contains the answer. 0.0 = no info, 1.0 = perfect answer>,\n"
-        "  \"reason\": \"<Briefly explain why you assigned this confidence score>\",\n"
-        "  \"answer\": \"<If confidence >= 0.6, provide the extracted answer here. If confidence < 0.6 or context lacks the answer, set this to null>\"\n"
+        "  \"answerability_confidence\": <float 0.0-1.0: confidence that the context CONTAINS the answer. 0.0 = definitely NOT in context, 1.0 = definitely IN context>,\n"
+        "  \"answer_confidence\": <float 0.0-1.0: IF answerable, confidence in the correctness of your extracted answer. Set to 0.0 if not answerable>,\n"
+        "  \"is_answerable\": <boolean: true if context contains the answer, false otherwise>,\n"
+        "  \"reason\": \"<Brief explanation: what information is present/missing in the context>\",\n"
+        "  \"extracted_answer\": \"<If is_answerable=true, provide the direct answer here. If false, set to null>\",\n"
+        "  \"answer_type\": \"<one of: 'explicit' (directly stated), 'inferable' (can be deduced), 'missing' (not in context)>\"\n"
         "}}\n\n"
+        "**Examples:**\n\n"
+        "Query: \"What is John's gym membership?\"\n"
+        "Context: \"John is a professor at MBZUAI. He published 50 papers.\"\n"
+        "Response: {{\"answerability_confidence\": 0.05, \"answer_confidence\": 0.0, \"is_answerable\": false, \"reason\": \"Context mentions John's profession and publications but contains no information about gym membership\", \"extracted_answer\": null, \"answer_type\": \"missing\"}}\n\n"
+        "Query: \"What is John's title?\"\n"
+        "Context: \"John is a professor at MBZUAI. He published 50 papers.\"\n"
+        "Response: {{\"answerability_confidence\": 0.95, \"answer_confidence\": 0.95, \"is_answerable\": true, \"reason\": \"Context explicitly states John's title\", \"extracted_answer\": \"Professor at MBZUAI\", \"answer_type\": \"explicit\"}}\n\n"
+        "Query: \"What is John's favorite city?\"\n"
+        "Context: \"John visited Paris and Tokyo for conferences.\"\n"
+        "Response: {{\"answerability_confidence\": 0.1, \"answer_confidence\": 0.0, \"is_answerable\": false, \"reason\": \"Context mentions cities John visited but does not state his favorite\", \"extracted_answer\": null, \"answer_type\": \"missing\"}}\n\n"
+        "Now evaluate:\n\n"
         "Query: {query}\n\n"
         "Retrieved Documents:\n{context}\n\n"
         "JSON Response:"
@@ -256,7 +279,9 @@ def evaluate_confidence(state: AgentState):
     })
     
     # Set defaults
-    confidence = 0.0
+    answerability_confidence = 0.0
+    answer_confidence = 0.0
+    is_answerable = False
     reason = ""
     extracted_answer = None
     
@@ -265,33 +290,57 @@ def evaluate_confidence(state: AgentState):
         clean_json = response.content.strip().strip('```json').strip('```').strip()
         result = json.loads(clean_json)
         
-        # Extract confidence and ensure it's a float safely clamped between 0.0 and 1.0
+        # Extract answerability confidence (this drives the abstain decision)
         try:
-            confidence = float(result.get("confidence", 0.0))
-            confidence = max(0.0, min(1.0, confidence))
+            answerability_confidence = float(result.get("answerability_confidence", 0.0))
+            answerability_confidence = max(0.0, min(1.0, answerability_confidence))
         except (ValueError, TypeError):
-            confidence = 0.0
-            
-        reason = str(result.get("reason", ""))
-        extracted_answer = result.get("answer")
+            answerability_confidence = 0.0
         
-        # Clean up extracted answer if it's the string "null"
-        if isinstance(extracted_answer, str) and extracted_answer.lower() == "null":
+        # Extract answer confidence (only meaningful if answerable)
+        try:
+            answer_confidence = float(result.get("answer_confidence", 0.0))
+            answer_confidence = max(0.0, min(1.0, answer_confidence))
+        except (ValueError, TypeError):
+            answer_confidence = 0.0
+            
+        is_answerable = result.get("is_answerable", False)
+        reason = str(result.get("reason", ""))
+        extracted_answer = result.get("extracted_answer")
+        
+        # Clean up extracted answer if it's the string "null" or empty
+        if isinstance(extracted_answer, str):
+            if extracted_answer.lower() == "null" or extracted_answer.strip() == "":
+                extracted_answer = None
+        
+        # Enforce consistency: if not answerable, extracted_answer should be None
+        if not is_answerable:
             extracted_answer = None
+            answer_confidence = 0.0
             
     except Exception as e:
         print(f"⚠️ Error parsing confidence JSON: {e}")
-        confidence = 0.0
+        print(f"Raw response: {response.content}")
+        answerability_confidence = 0.0
+        answer_confidence = 0.0
+        is_answerable = False
         reason = "Failed to parse LLM evaluation response."
         
     suggested = []
     # Get the threshold from state or use default
     threshold = state.get("confidence_threshold", CONFIDENCE_THRESHOLD)
     
-    # If confidence is below the threshold, generate suggested questions
-    if confidence < threshold:
+    # If answerability confidence is below threshold, generate suggested questions
+    if answerability_confidence < threshold:
+        # Build historical context string if available
+        historical_context = ""
+        if chat_history:
+            user_queries = [msg["content"] for msg in chat_history[-5:] if msg["role"] == "user"]
+            if user_queries:
+                historical_context = "Previous questions in conversation:\n" + "\n".join([f"- {q}" for q in user_queries]) + "\n\n"
+        
         suggest_prompt = ChatPromptTemplate.from_template(
-            "The user asked a question, but the provided context doesn't fully answer it (Confidence is low). "
+            "The user asked a question, but the provided context does NOT contain the answer (low answerability confidence). "
             "Suggest 3 alternative or follow-up questions that are closely related to the user's original question, "
             "but CAN be answered using the provided context.\n\n"
             "{historical_context}"
@@ -300,20 +349,17 @@ def evaluate_confidence(state: AgentState):
             "Instructions:\n"
             "- Generate exactly 3 questions.\n"
             "- The questions should be refinements, specific aspects, or related topics of the original question that the context actually covers.\n"
-            "- The questions be independent of each other to the point where they can be answered using the context.\n"
-            "- Provide the output strictly as a JSON list of strings.\n\n"
-            "Examples:\n"
-            "Original Question: \"Tell me about Le Song's publications on quantum computing.\"\n"
-            "Context: (Contains info about Le Song's work in reinforcement learning, but no quantum computing).\n"
-            "Output: [\"What are Le Song's main research areas in machine learning?\", \"Can you list some of Le Song's recent publications in reinforcement learning?\", \"What projects is Le Song currently leading at MBZUAI?\"]\n\n"
-            "Original Question: \"What is the budget for the Climate AI project?\"\n"
-            "Context: (Contains details about the Climate AI project's goals and team, but no financial info).\n"
-            "Output: [\"Who are the lead researchers for the Climate AI project?\", \"What are the main objectives of the Climate AI project?\", \"Which category does the Climate AI project fall under?\"]\n\n"
+            "- They must be independent and answerable using only the provided context.\n"
+            "- Do NOT mention any entities or facts that are not present in the context.\n"
+            "- The questions must be phrased as natural, standalone questions.\n"
+            "- Provide the output strictly as a JSON list of strings, e.g., [\"Question 1?\", \"Question 2?\", \"Question 3?\"]\n"
+            "- Do not include any extra text, explanations, or markdown formatting.\n\n"
             "Now, generate the 3 questions for the following:\n"
             "Original Question: {query}\n"
             "Context:\n{context}\n\n"
             "JSON Output:"
         )
+
         suggest_chain = suggest_prompt | llm
         suggest_response = suggest_chain.invoke({
             "historical_context": historical_context,
@@ -327,13 +373,15 @@ def evaluate_confidence(state: AgentState):
                 suggested = []
         except Exception:
             suggested = [
-                f"Who are the main researchers or faculty members in Machine Learning?",
-                f"what is the mail id of Prof Le Song?",
-                f"What is the url of Prof Le Song?"
+                "Who are the main researchers or faculty members in Machine Learning?",
+                "What is the email address of Prof Le Song?",
+                "What is the website URL of Prof Le Song?"
             ]
 
     return {
-        "confidence_score": confidence, 
+        "confidence_score": answerability_confidence,  # This is now clearly answerability confidence
+        "answer_confidence": answer_confidence,         # Additional field for answer quality
+        "is_answerable": is_answerable,                 # Explicit boolean flag
         "reason": reason,
         "suggested_questions": suggested,
         "extracted_answer": extracted_answer
@@ -346,25 +394,25 @@ def generate_answer(state: AgentState):
     # OPTIMIZATION: If the confidence checker already extracted a valid answer, just use it!
     if extracted_answer and extracted_answer.lower() != "null":
         return {"final_answer": extracted_answer}
-        
-    # Fallback: Generate it from scratch if extraction failed
-    query = state["query"]
-    docs = state["retrieved_docs"]
     
-    context_text = ""
-    for i, doc in enumerate(docs):
-        meta = doc.get("metadata", {})
-        title = meta.get("title") or meta.get("name", "Unknown")
-        context_text += f"\n--- Document {i+1} ---\nSource: {title}\nContent: {doc.get('enriched_text', '')}\n"
-        
-    prompt = ChatPromptTemplate.from_template(
-        "You are an expert AI assistant for MBZUAI. Answer the user's question based ONLY on the provided context. "
-        "If the answer is not in the context, state that you don't know.\n\nContext: {context}\n\nUser Question: {query}\n\nAnswer:"
-    )
-    chain = prompt | llm
-    response = chain.invoke({"context": context_text, "query": query})
+    # # Fallback: Generate it from scratch if extraction failed
+    # query = state["query"]
+    # docs = state["retrieved_docs"]
     
-    return {"final_answer": response.content}
+    # context_text = ""
+    # for i, doc in enumerate(docs):
+    #     meta = doc.get("metadata", {})
+    #     title = meta.get("title") or meta.get("name", "Unknown")
+    #     context_text += f"\n--- Document {i+1} ---\nSource: {title}\nContent: {doc.get('enriched_text', '')}\n"
+        
+    # prompt = ChatPromptTemplate.from_template(
+    #     "You are an expert AI assistant for MBZUAI. Answer the user's question based ONLY on the provided context. "
+    #     "If the answer is not in the context, state that you don't know.\n\nContext: {context}\n\nUser Question: {query}\n\nAnswer:"
+    # )
+    # chain = prompt | llm
+    # response = chain.invoke({"context": context_text, "query": query})
+    
+    return {"final_answer": "null"}
 
 # --- Terminal Nodes ---
 
@@ -372,14 +420,17 @@ def return_abstain(state: AgentState):
     suggested = state.get("suggested_questions", [])
     reason = state.get("reason", "The retrieved information is insufficient to answer confidently.")
     confidence = state.get("confidence_score", 0.0)
-    
+    is_answerable = state.get("is_answerable", False)
+
     # Show the user the exact confidence score and the LLM's reasoning
-    msg = f"I'm sorry, but I cannot answer your question with high confidence (Confidence: {confidence:.2f}). Reason: {reason}\n\n"
+    # Make it clear that the context does not contain the answer (not just low confidence in the answer)
+    msg = f"I'm sorry, but the provided context does not contain enough information to answer your question (Answerability Confidence: {confidence:.2f}). Reason: {reason}\n\n"
     if suggested:
         msg += "Here are some relevant questions you might want to ask instead:\n"
         for i, q in enumerate(suggested, 1):
             msg += f"{i}. {q}\n"
     return {"final_answer": msg}
+
 
 def return_generic_questions(state: AgentState):
     msg = ("I couldn't find specific information related to your query in the MBZUAI database. "
