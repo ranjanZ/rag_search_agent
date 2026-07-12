@@ -76,6 +76,21 @@ Currently Abstain threshod is 0.6
 #### For  indexing 
 python src/ingestion_service.py
 
-
 #### Retreival
 python src/retrieval_service.py
+
+### For evalaution 
+Update the src/cong.py 
+
+#### To evalaute retrieval 
+run python evaluation/evaluation_retrieval.py
+# threshold finding 
+run python utils/find_threshold.py 
+
+#### To evalaute abastain behabior 
+run python evaluation/evaluation_abstain.py
+
+
+
+
+
