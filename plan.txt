@@ -1,0 +1,43 @@
+1. Get  related work for abstain vs accucacy 
+   https://arxiv.org/pdf/2605.25831
+   https://arxiv.org/html/2604.04565v1
+   https://arxiv.org/html/2605.18792v1
+   https://arxiv.org/pdf/2411.06037
+
+2. What are the metric they consider 
+3. What are the dataset they consider in their paper 
+ShARC  - PassiveQA
+Conflict-QA   
+AmbigQA Clarify, Abstain or Answer?
+Question Answering in Context (QuAC)
+
+Natural Questions (NQ), TriviaQA  ->paper Sufficient Context: A New Lens on RAG Systems (ICLR 2025)
+
+
+4. document the methods in ppt. 
+
+
+
+
+
+#############
+
+
+Slide  Design choices 
+2. Reason about Dense model 
+1. Reason about threshold 
+    For each datasset we can have hit rate @5 and chose threshold
+    --generate graph 
+    
+3. reason about  why lexical and Semantic.
+
+4. to make it simple I have LLM as judge to deci
+
+
+4. Abstain vs Accuracy Trade-offs
+Absolutely determine the best confidence threshold through systematic testing. Run your evaluation with different confidence thresholds (0.3, 0.5, 0.7, 0.9) to map the trade-off curve between accuracy, abstain rate, and hallucination rate. Plot these metrics to identify the optimal threshold for your specific use case requirements.
+
+
+
+
+

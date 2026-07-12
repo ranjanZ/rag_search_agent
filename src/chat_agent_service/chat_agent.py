@@ -6,6 +6,8 @@ from typing import TypedDict, List, Dict, Any, Optional
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
+from langchain_ollama import ChatOllama
+
 
 # Add parent directory to path to import src modules and config
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -15,30 +17,30 @@ from src.config import DEEPINFRA_API_KEY, DEEPINFRA_BASE_URL, LLM_MODEL
 # ==========================================================
 # 1. Initialize Main LLM (DeepInfra) for complex reasoning
 # ==========================================================
-llm = ChatOpenAI(
-    model=LLM_MODEL,
-    api_key=DEEPINFRA_API_KEY,
-    base_url=DEEPINFRA_BASE_URL,
-    temperature=0
-)
-
-# ==========================================================
-# 2. Initialize Small LLM (Local Ollama/LM Studio) for routing
-# ==========================================================
-# Note: Ensure Ollama is running locally with the model pulled.
-# small_llm = ChatOpenAI(
-#     model="qwen2.5:1.5b-instruct-q4_K_M",
-#     base_url="http://localhost:11434/v1", 
-#     api_key="ollama", # Required by langchain_openai even if local server ignores it
+# llm = ChatOpenAI(
+#     model=LLM_MODEL,
+#     api_key=DEEPINFRA_API_KEY,
+#     base_url=DEEPINFRA_BASE_URL,
 #     temperature=0
 # )
+
+
+
+llm = ChatOllama(
+    model="qwen2.5:1.5b-instruct-q4_K_M", 
+    temperature=0,
+    num_ctx=2048
+)
+
+
+
 
 # Define the confidence threshold for confidence (configurable via environment or runtime)
 # Default value, can be overridden at runtime
 CONFIDENCE_THRESHOLD = float(os.environ.get("CONFIDENCE_THRESHOLD", "0.6"))
 
 # Ablation study configuration flags (configurable at runtime)
-USE_HISTORICAL_CONTEXT = True  # Whether to use historical questions as context
+USE_HISTORICAL_CONTEXT = False  # Whether to use historical questions as context
 
 # --- Define the Agent State ---
 class AgentState(TypedDict):
@@ -168,13 +170,22 @@ def rewrite_query_with_context(state: AgentState):
 
 
 def check_off_topic(state: AgentState):
-    """Checks if the query is related to MBZUAI/Academic topics using the SMALL model."""
+    """Checks if the query is related to the configured domain topic using the SMALL model."""
     query = state["query"]
     original_query = state.get("original_query", query)
     
+    # Import DOMAIN_TOPIC from config
+    try:
+        from src.config import DOMAIN_TOPIC
+    except ImportError:
+        from config import DOMAIN_TOPIC
+    
+    # If DOMAIN_TOPIC is None, skip off-topic checking (allow all queries)
+    if DOMAIN_TOPIC is None:
+        return {"is_off_topic": False}
+    
     prompt = ChatPromptTemplate.from_template(
-        "You are a strict classifier. Determine if the user query is related to MBZUAI, "
-        "artificial intelligence, computer science, research projects, or academic topics.\n"
+        f"You are a strict classifier. Determine if the user query is related to {DOMAIN_TOPIC}.\n"
         "If it is completely unrelated (e.g., weather, cooking, sports, general trivia), respond ONLY with 'OFF_TOPIC'.\n"
         "If it is related, respond ONLY with 'ON_TOPIC'.\n\n"
         "Query: {query}\n\n"
@@ -209,29 +220,19 @@ def check_relevance(state: AgentState):
     max_lex = max(scores.get("lexical", [0.0])) if scores.get("lexical") else 0.0
     max_name = max(scores.get("name_lexical", [0.0])) if scores.get("name_lexical") else 0.0
     
-    is_relevant = len(docs) > 0 and (max_sem > 0.35 or max_lex > 2.0 or max_name > 2.0)
+    is_relevant = len(docs) > 0 and (max_sem > 0.3 or max_lex > 4.0 or max_name > 4.0)
     return {"is_relevant": is_relevant}
+
 
 def evaluate_confidence(state: AgentState):
     """Uses LLM to evaluate context confidence and attempts to extract the answer."""
     query = state["query"]
     docs = state["retrieved_docs"]
-    chat_history = state.get("chat_history", [])
-    use_historical_context = state.get("use_historical_context", USE_HISTORICAL_CONTEXT)
-    
+    chat_history = state.get("chat_history", []) 
+
+
     # Combine top 10 chunks for context
     context_text = "\n\n".join([doc.get("enriched_text", "") for doc in docs[:10]])
-    
-    # Build historical context if enabled and available
-    historical_context = ""
-    if use_historical_context and chat_history:
-        # Format chat history for context (only user questions for brevity)
-        history_items = []
-        for msg in chat_history[-5:]:  # Last 5 messages for context
-            if msg["role"] == "user":
-                history_items.append(f"Previous question: {msg['content']}")
-        if history_items:
-            historical_context = "\n".join(history_items) + "\n\n"
     
     prompt = ChatPromptTemplate.from_template(
         "You are an expert evaluator. Given a user query and a set of retrieved documents, determine how well the "
@@ -242,14 +243,14 @@ def evaluate_confidence(state: AgentState):
         "  \"reason\": \"<Briefly explain why you assigned this confidence score>\",\n"
         "  \"answer\": \"<If confidence >= 0.6, provide the extracted answer here. If confidence < 0.6 or context lacks the answer, set this to null>\"\n"
         "}}\n\n"
-        "{historical_context}"
         "Query: {query}\n\n"
         "Retrieved Documents:\n{context}\n\n"
         "JSON Response:"
     )
+
+
     chain = prompt | llm
     response = chain.invoke({
-        "historical_context": historical_context,
         "query": query, 
         "context": context_text
     })
@@ -440,7 +441,7 @@ workflow.add_edge("return_off_topic", END)
 agent_graph = workflow.compile()
 
 def run_agent(query: str, chat_history: Optional[List[Dict[str, str]]] = None, 
-              use_historical_context: bool = True, confidence_threshold: float = 0.6):
+              use_historical_context: bool = False, confidence_threshold: float = 0.6):
     """Entry point for the Streamlit app to run the agent.
     
     Args:

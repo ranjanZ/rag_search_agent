@@ -3,13 +3,18 @@ import faiss
 import numpy as np
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
-from src.config import (FAISS_INDEX_PATH, FAISS_MAPPING_PATH, BM25_INDEX_PATH, NAME_BM25_INDEX_PATH,
-                    EMBEDDING_MODEL_NAME, TOP_K_SEMANTIC, TOP_K_LEXICAL, 
-                    FINAL_TOP_K, RRF_K)
+try:
+    from src.config import (FAISS_INDEX_PATH, FAISS_MAPPING_PATH, BM25_INDEX_PATH, NAME_BM25_INDEX_PATH,
+                        EMBEDDING_MODEL_NAME, TOP_K_SEMANTIC, TOP_K_LEXICAL, 
+                        FINAL_TOP_K, RRF_K)
+except ImportError:
+    from config import (FAISS_INDEX_PATH, FAISS_MAPPING_PATH, BM25_INDEX_PATH, NAME_BM25_INDEX_PATH,
+                        EMBEDDING_MODEL_NAME, TOP_K_SEMANTIC, TOP_K_LEXICAL, 
+                        FINAL_TOP_K, RRF_K)
 
-# --- Score Thresholds ---
+# --- Score Thresholds (Defaults) ---
 SEMANTIC_THRESHOLD = 0.3   # Minimum Cosine Similarity for FAISS
-LEXICAL_THRESHOLD = 0.01   # Minimum BM25 Score for Lexical Search
+LEXICAL_THRESHOLD = 4   # Minimum BM25 Score for Lexical Search
 
 class RetrievalEngine:
     def __init__(self):
@@ -29,7 +34,7 @@ class RetrievalEngine:
         with open(NAME_BM25_INDEX_PATH, 'rb') as f:
             self.name_bm25 = pickle.load(f)
 
-    def semantic_search(self, query):
+    def semantic_search(self, query, semantic_threshold=SEMANTIC_THRESHOLD):
         query_vec = self.model.encode([query])
         faiss.normalize_L2(query_vec)
         scores, indices = self.faiss_index.search(query_vec, TOP_K_SEMANTIC)
@@ -38,13 +43,13 @@ class RetrievalEngine:
         valid_scores = []
         for score, idx in zip(scores[0], indices[0]):
             # Filter out FAISS padding (-1) and apply semantic threshold
-            if idx != -1 and score >= SEMANTIC_THRESHOLD:
+            if idx != -1 and score >= semantic_threshold:
                 valid_indices.append(int(idx))
                 valid_scores.append(float(score))
                 
         return valid_indices, valid_scores
 
-    def lexical_search(self, query):
+    def lexical_search(self, query, lexical_threshold=LEXICAL_THRESHOLD):
         tokenized_query = query.lower().split()
         scores = self.bm25.get_scores(tokenized_query)
         
@@ -55,13 +60,13 @@ class RetrievalEngine:
         valid_scores = []
         for idx, score in zip(top_indices, top_scores):
             # Apply lexical threshold
-            if score >= LEXICAL_THRESHOLD:
+            if score >= lexical_threshold:
                 valid_indices.append(int(idx))
                 valid_scores.append(float(score))
                 
         return valid_indices, valid_scores
 
-    def name_lexical_search(self, query):
+    def name_lexical_search(self, query, lexical_threshold=LEXICAL_THRESHOLD):
         tokenized_query = query.lower().split()
         scores = self.name_bm25.get_scores(tokenized_query)
         
@@ -72,7 +77,7 @@ class RetrievalEngine:
         valid_scores = []
         for idx, score in zip(top_indices, top_scores):
             # Apply lexical threshold
-            if score >= LEXICAL_THRESHOLD:
+            if score >= lexical_threshold:
                 valid_indices.append(int(idx))
                 valid_scores.append(float(score))
                 
@@ -94,11 +99,14 @@ class RetrievalEngine:
         sorted_indices = sorted(scores.keys(), key=lambda k: scores[k], reverse=True)
         return sorted_indices[:FINAL_TOP_K]
 
-    def hybrid_search(self, query):
+    def hybrid_search(self, query, semantic_threshold=SEMANTIC_THRESHOLD, lexical_threshold=LEXICAL_THRESHOLD):
+        # Print the active thresholds being used for this search
+        #print(f"📏 Thresholds -> Semantic: {semantic_threshold} | Lexical: {lexical_threshold}\n")
+        
         # 1. Get filtered IDs and Scores from all 3 retrievers
-        sem_ids, sem_scores = self.semantic_search(query)
-        lex_ids, lex_scores = self.lexical_search(query)
-        lex_ids_name, lex_scores_name = self.name_lexical_search(query)
+        sem_ids, sem_scores = self.semantic_search(query, semantic_threshold=semantic_threshold)
+        lex_ids, lex_scores = self.lexical_search(query, lexical_threshold=lexical_threshold)
+        lex_ids_name, lex_scores_name = self.name_lexical_search(query, lexical_threshold=lexical_threshold)
         
         # 2. Perform Reciprocal Rank Fusion
         fused_ids = self.reciprocal_rank_fusion(sem_ids, lex_ids, lex_ids_name)
@@ -130,8 +138,23 @@ class RetrievalEngine:
 # Singleton instance for the app
 engine = RetrievalEngine()
 
-def retrieve_context(query: str):
-    results = engine.hybrid_search(query)
+def retrieve_context(query: str, semantic_threshold=SEMANTIC_THRESHOLD, lexical_threshold=LEXICAL_THRESHOLD):
+    """
+    Retrieve context for a query.
+    
+    Args:
+        query: The search query
+        semantic_threshold: Minimum Cosine Similarity for FAISS
+        lexical_threshold: Minimum BM25 Score for Lexical Search
+        
+    Returns:
+        List of retrieved chunks (fused results)
+    """
+    results = engine.hybrid_search(
+        query, 
+        semantic_threshold=semantic_threshold, 
+        lexical_threshold=lexical_threshold
+    )
     return results["fused"]  # Return only the fused results for the chat service
 
 
@@ -139,9 +162,16 @@ if __name__ == "__main__":
     # Test the retrieval engine
     test_query = "Prof Salem mail id"
     print(f"🔎 Testing query: '{test_query}'\n")
-    print(f"📏 Thresholds -> Semantic: {SEMANTIC_THRESHOLD} | Lexical: {LEXICAL_THRESHOLD}\n")
     
-    results_dict = engine.hybrid_search(test_query)
+    # Example: Overriding thresholds dynamically for testing
+    custom_sem_thresh = 0.25
+    custom_lex_thresh = 0.05
+    
+    results_dict = engine.hybrid_search(
+        test_query, 
+        semantic_threshold=custom_sem_thresh, 
+        lexical_threshold=custom_lex_thresh
+    )
     
     print("\n=== RETRIEVER METRICS ===")
     for retriever_name, data in results_dict.items():
