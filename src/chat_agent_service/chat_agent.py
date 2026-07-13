@@ -26,13 +26,19 @@ from src.config import DEEPINFRA_API_KEY, DEEPINFRA_BASE_URL, LLM_MODEL
 
 
 
+# llm = ChatOllama(
+#     model="qwen2.5:1.5b-instruct-q4_K_M", 
+#     temperature=0,
+#     num_ctx=2048
+# )
+
+
 llm = ChatOllama(
-    model="qwen2.5:1.5b-instruct-q4_K_M", 
+    model="llama3.2",  
     temperature=0,
-    num_ctx=2048
+    num_ctx=2048,        
+    num_thread=4
 )
-
-
 
 
 # Define the confidence threshold for confidence (configurable via environment or runtime)

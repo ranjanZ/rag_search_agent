@@ -18,3 +18,4 @@ langchain
 langchain-openai
 langgraph
 langchain_community
+langchain-ollama

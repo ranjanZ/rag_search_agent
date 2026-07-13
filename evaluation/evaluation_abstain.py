@@ -239,6 +239,37 @@ def run_answer_quality_evaluation(eval_data: List[Dict[str, Any]], confidence_th
         }
     }
 
+
+
+def compute_result(agent_results, confidence_threshold: float = 0.6) -> Dict[str, Any]:
+    sweep_df = evaluate_threshold_sweep(agent_results, [confidence_threshold])
+    row = sweep_df.iloc[0]
+    
+    answerable_count = sum(1 for r in agent_results if r['is_answerable'])
+    unanswerable_count = sum(1 for r in agent_results if not r['is_answerable'])
+    
+    # Calculate true overall abstain rate (Fixed bug from previous version)
+    total_abstains = ((1.0 - row['coverage']) * answerable_count) + (row['correct_abstain_rate'] * unanswerable_count)
+    
+    return {
+        'answerable': {
+            'count': answerable_count,
+            'abstain_rate': 1.0 - row['coverage'],
+            'coverage': row['coverage']
+        },
+        'unanswerable': {
+            'count': unanswerable_count,
+            'correct_abstain_rate': row['correct_abstain_rate'],
+            'false_answer_rate': row['false_answer_rate']
+        },
+        'overall': {
+            'total_queries': len(eval_data),
+            'overall_abstain_rate': total_abstains / len(eval_data) if eval_data else 0.0
+        }
+    }
+
+
+
 def print_answer_quality_results(results: Dict[str, Any]):
     """Print answer quality evaluation results."""
     print("\n" + "="*70)
@@ -318,7 +349,6 @@ if __name__ == "__main__":
                 json.dump(agent_results, fout)
 
 
-
             # 2. Evaluate all thresholds instantly
             sweep_df = evaluate_threshold_sweep(agent_results, threshold_range)
             
@@ -332,6 +362,11 @@ if __name__ == "__main__":
                 best_threshold = valid_sweep.loc[best_idx, 'threshold']
                 print(f"\n🏆 RECOMMENDED THRESHOLD: {best_threshold} "
                       f"(Maximizes Correct Abstain while keeping Coverage >= 80%)")
+                
+                answer_quality_results=compute_result(agent_results, confidence_threshold=best_threshold)
+                print_answer_quality_results(answer_quality_results)
+
+
             else:
                 print("\n⚠️ No threshold found that maintains >= 80% Coverage.")
                 

@@ -93,4 +93,25 @@ run python evaluation/evaluation_abstain.py
 
 
 
+##MAZUAI dataset with out chat agent llama3.2 model
+
+--- Answerable Questions ---
+  Count:              50
+  Abstain Rate:       0.0800
+  Coverage:           0.9200
+
+--- Unanswerable Questions ---
+  Count:              50
+  Correct Abstain:    1.0000
+  False Answer Rate:  0.0000
+
+--- Overall ---
+  Total Queries:      100
+  Overall Abstain:    0.5400
+======================================================================
+
+
+
+
+
 

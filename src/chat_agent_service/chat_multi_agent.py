@@ -18,11 +18,20 @@ except ImportError:
 # ==========================================================
 # 1. Initialize Main LLM (Optimized for CPU)
 # ==========================================================
+# llm = ChatOllama(
+#     model="qwen2.5:1.5b-instruct-q4_K_M", 
+#     temperature=0,
+#     num_ctx=3024,  # Reduced to 1024 to save RAM and speed up CPU inference
+#     num_thread=4   # Set this to the number of physical cores on your CPU
+# )
+
+
+
 llm = ChatOllama(
-    model="qwen2.5:1.5b-instruct-q4_K_M", 
+    model="llama3.2",  
     temperature=0,
-    num_ctx=1024,  # Reduced to 1024 to save RAM and speed up CPU inference
-    num_thread=4   # Set this to the number of physical cores on your CPU
+    num_ctx=2048,        
+    num_thread=4
 )
 
 CONFIDENCE_THRESHOLD = float(os.environ.get("CONFIDENCE_THRESHOLD", "0.6"))
