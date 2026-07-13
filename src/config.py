@@ -63,9 +63,9 @@ DATASET_CONFIG: Dict[str, Any] = {
 
 
 
-#DEFAULT_DATASETS = ["squad_v2"]
+DEFAULT_DATASETS = ["squad_v2"]
 #DEFAULT_DATASETS = ["newsqa"]
-DEFAULT_DATASETS = ["faculty", "research_projects"]
+#DEFAULT_DATASETS = ["faculty", "research_projects"]
 #DEFAULT_DATASETS = ["faculty", "research_projects", "squad_v2","newsqa"]
 
 

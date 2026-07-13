@@ -12,10 +12,11 @@ rank_bm25
 transformers
 openai
 faiss-cpu
-
+datasets
 
 langchain 
 langchain-openai
 langgraph
 langchain_community
 langchain-ollama
+seaborn

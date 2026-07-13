@@ -19,8 +19,8 @@ from src.config import DATASET_CONFIG, DEFAULT_DATASETS
 
 def lazy_import_chat_agent():
     """Lazy import of chat agent to avoid initialization at import time."""
-    #from src.chat_agent_service.chat_agent import run_agent
-    from src.chat_agent_service.chat_multi_agent import run_agent
+    from src.chat_agent_service.chat_agent import run_agent
+    #from src.chat_agent_service.chat_multi_agent import run_agent
 
     return run_agent
 
