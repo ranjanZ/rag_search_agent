@@ -34,6 +34,7 @@ open src/config.py   and update DEEPINFRA_API_KEY
 
 
 ### Step 4: Launch the Streamlit Application
+ollama pull llama3.2:3b
 streamlit run app.py
 
 
